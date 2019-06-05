@@ -1,0 +1,1199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/ecatSrv/Service1" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/ecatSrv/Service1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/ecatSrv/Service1">
+      <s:import namespace="http://www.w3.org/2001/XMLSchema" />
+      <s:element name="getAreas">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAreasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAreasResult" type="tns:ArrayOfStAreas" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStAreas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="stAreas" type="tns:stAreas" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stAreas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="gls_area" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getFamilias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoArea" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFamiliasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getFamiliasResult" type="tns:ArrayOfStFamilias" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStFamilias">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="stFamilias" type="tns:stFamilias" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stFamilias">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_familia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="gls_familia" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getSubFamilias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFamilia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSubFamiliasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSubFamiliasResult" type="tns:ArrayOfStSubFamilias" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStSubFamilias">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="stSubFamilias" type="tns:stSubFamilias" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stSubFamilias">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_familia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_subfamilia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="gls_subfamilia" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getAtributos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFamilia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSubfamilia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAtributosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAtributosResult" type="tns:ArrayOfStAtributos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStAtributos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="stAtributos" type="tns:stAtributos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stAtributos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_familia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_subfamilia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_atributo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getAtributosXProd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoProducto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAtributosXProdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAtributosXProdResult" type="tns:ArrayOfStAtribXProd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStAtribXProd">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="stAtribXProd" type="tns:stAtribXProd" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stAtribXProd">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_producto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_atributo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_valor_atributo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getValoresAtributos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFamilia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSubfamilia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo6" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo6" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getValoresAtributosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getValoresAtributosResult" type="tns:ArrayOfStValoresAtributos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStValoresAtributos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="stValoresAtributos" type="tns:stValoresAtributos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stValoresAtributos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_familia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_subfamilia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_atributo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_valor_atributo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getProductos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFamilia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSubfamilia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoProducto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo6" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo6" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getProductosResult" type="tns:ArrayOfStProductos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStProductos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="stProductos" type="tns:stProductos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stProductos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_familia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_subfamilia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_producto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="gls_producto" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ind_stock" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ind_descontinuado" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="gls_unidad_venta" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fc_uemp_uvta" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="resuelveCotizacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="resuelveCotizacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resuelveCotizacionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ingresaPedido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ingresaPedidoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ingresaPedidoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultaPrecios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultaPreciosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultaPreciosResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaDetallePedido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaDetallePedidoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaDetallePedidoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaPedidos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaPedidosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaPedidosResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneDetalleCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneDetalleClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneDetalleClienteResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneStockMaterial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneStockMaterialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneStockMaterialResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneParametrosSap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneParametrosSapResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneParametrosSapResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="rep_zsd53">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="rep_zsd53Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rep_zsd53Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneEstadoPedido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneEstadoPedidoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneEstadoPedidoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneEstadoReparto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneEstadoRepartoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneEstadoRepartoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneDetalleEntrega">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneDetalleEntregaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneDetalleEntregaResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductosXDescripcion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="patron" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductosXDescripcionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getProductosXDescripcionResult" type="tns:ArrayOfStProductos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductosXHistoria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaIni" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaFin" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductosXHistoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getProductosXHistoriaResult" type="tns:ArrayOfStProductos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSucursal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUsuarioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPrivilegio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSucursal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPrivilegioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPrivilegioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDocumento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSucursal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDocumentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDocumentoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneStockMaterial2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneStockMaterial2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneStockMaterial2Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="testCola">
+        <s:complexType />
+      </s:element>
+      <s:element name="testColaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="testColaResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getAreasSoapIn">
+    <wsdl:part name="parameters" element="tns:getAreas" />
+  </wsdl:message>
+  <wsdl:message name="getAreasSoapOut">
+    <wsdl:part name="parameters" element="tns:getAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFamiliasSoapIn">
+    <wsdl:part name="parameters" element="tns:getFamilias" />
+  </wsdl:message>
+  <wsdl:message name="getFamiliasSoapOut">
+    <wsdl:part name="parameters" element="tns:getFamiliasResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSubFamiliasSoapIn">
+    <wsdl:part name="parameters" element="tns:getSubFamilias" />
+  </wsdl:message>
+  <wsdl:message name="getSubFamiliasSoapOut">
+    <wsdl:part name="parameters" element="tns:getSubFamiliasResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAtributosSoapIn">
+    <wsdl:part name="parameters" element="tns:getAtributos" />
+  </wsdl:message>
+  <wsdl:message name="getAtributosSoapOut">
+    <wsdl:part name="parameters" element="tns:getAtributosResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAtributosXProdSoapIn">
+    <wsdl:part name="parameters" element="tns:getAtributosXProd" />
+  </wsdl:message>
+  <wsdl:message name="getAtributosXProdSoapOut">
+    <wsdl:part name="parameters" element="tns:getAtributosXProdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getValoresAtributosSoapIn">
+    <wsdl:part name="parameters" element="tns:getValoresAtributos" />
+  </wsdl:message>
+  <wsdl:message name="getValoresAtributosSoapOut">
+    <wsdl:part name="parameters" element="tns:getValoresAtributosResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProductosSoapIn">
+    <wsdl:part name="parameters" element="tns:getProductos" />
+  </wsdl:message>
+  <wsdl:message name="getProductosSoapOut">
+    <wsdl:part name="parameters" element="tns:getProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="resuelveCotizacionSoapIn">
+    <wsdl:part name="parameters" element="tns:resuelveCotizacion" />
+  </wsdl:message>
+  <wsdl:message name="resuelveCotizacionSoapOut">
+    <wsdl:part name="parameters" element="tns:resuelveCotizacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ingresaPedidoSoapIn">
+    <wsdl:part name="parameters" element="tns:ingresaPedido" />
+  </wsdl:message>
+  <wsdl:message name="ingresaPedidoSoapOut">
+    <wsdl:part name="parameters" element="tns:ingresaPedidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultaPreciosSoapIn">
+    <wsdl:part name="parameters" element="tns:consultaPrecios" />
+  </wsdl:message>
+  <wsdl:message name="consultaPreciosSoapOut">
+    <wsdl:part name="parameters" element="tns:consultaPreciosResponse" />
+  </wsdl:message>
+  <wsdl:message name="listaDetallePedidoSoapIn">
+    <wsdl:part name="parameters" element="tns:listaDetallePedido" />
+  </wsdl:message>
+  <wsdl:message name="listaDetallePedidoSoapOut">
+    <wsdl:part name="parameters" element="tns:listaDetallePedidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="listaPedidosSoapIn">
+    <wsdl:part name="parameters" element="tns:listaPedidos" />
+  </wsdl:message>
+  <wsdl:message name="listaPedidosSoapOut">
+    <wsdl:part name="parameters" element="tns:listaPedidosResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneDetalleClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneDetalleCliente" />
+  </wsdl:message>
+  <wsdl:message name="obtieneDetalleClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneDetalleClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneStockMaterialSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneStockMaterial" />
+  </wsdl:message>
+  <wsdl:message name="obtieneStockMaterialSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneStockMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneParametrosSapSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneParametrosSap" />
+  </wsdl:message>
+  <wsdl:message name="obtieneParametrosSapSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneParametrosSapResponse" />
+  </wsdl:message>
+  <wsdl:message name="rep_zsd53SoapIn">
+    <wsdl:part name="parameters" element="tns:rep_zsd53" />
+  </wsdl:message>
+  <wsdl:message name="rep_zsd53SoapOut">
+    <wsdl:part name="parameters" element="tns:rep_zsd53Response" />
+  </wsdl:message>
+  <wsdl:message name="obtieneEstadoPedidoSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneEstadoPedido" />
+  </wsdl:message>
+  <wsdl:message name="obtieneEstadoPedidoSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneEstadoPedidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneEstadoRepartoSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneEstadoReparto" />
+  </wsdl:message>
+  <wsdl:message name="obtieneEstadoRepartoSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneEstadoRepartoResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneDetalleEntregaSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneDetalleEntrega" />
+  </wsdl:message>
+  <wsdl:message name="obtieneDetalleEntregaSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneDetalleEntregaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProductosXDescripcionSoapIn">
+    <wsdl:part name="parameters" element="tns:getProductosXDescripcion" />
+  </wsdl:message>
+  <wsdl:message name="getProductosXDescripcionSoapOut">
+    <wsdl:part name="parameters" element="tns:getProductosXDescripcionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProductosXHistoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:getProductosXHistoria" />
+  </wsdl:message>
+  <wsdl:message name="getProductosXHistoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:getProductosXHistoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:getUsuario" />
+  </wsdl:message>
+  <wsdl:message name="getUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:getUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPrivilegioSoapIn">
+    <wsdl:part name="parameters" element="tns:getPrivilegio" />
+  </wsdl:message>
+  <wsdl:message name="getPrivilegioSoapOut">
+    <wsdl:part name="parameters" element="tns:getPrivilegioResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentoSoapIn">
+    <wsdl:part name="parameters" element="tns:getDocumento" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentoSoapOut">
+    <wsdl:part name="parameters" element="tns:getDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneStockMaterial2SoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneStockMaterial2" />
+  </wsdl:message>
+  <wsdl:message name="obtieneStockMaterial2SoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneStockMaterial2Response" />
+  </wsdl:message>
+  <wsdl:message name="testColaSoapIn">
+    <wsdl:part name="parameters" element="tns:testCola" />
+  </wsdl:message>
+  <wsdl:message name="testColaSoapOut">
+    <wsdl:part name="parameters" element="tns:testColaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="eCatSrvSoap">
+    <wsdl:operation name="getAreas">
+      <wsdl:input message="tns:getAreasSoapIn" />
+      <wsdl:output message="tns:getAreasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getFamilias">
+      <wsdl:input message="tns:getFamiliasSoapIn" />
+      <wsdl:output message="tns:getFamiliasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSubFamilias">
+      <wsdl:input message="tns:getSubFamiliasSoapIn" />
+      <wsdl:output message="tns:getSubFamiliasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAtributos">
+      <wsdl:input message="tns:getAtributosSoapIn" />
+      <wsdl:output message="tns:getAtributosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAtributosXProd">
+      <wsdl:input message="tns:getAtributosXProdSoapIn" />
+      <wsdl:output message="tns:getAtributosXProdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getValoresAtributos">
+      <wsdl:input message="tns:getValoresAtributosSoapIn" />
+      <wsdl:output message="tns:getValoresAtributosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductos">
+      <wsdl:input message="tns:getProductosSoapIn" />
+      <wsdl:output message="tns:getProductosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="resuelveCotizacion">
+      <wsdl:input message="tns:resuelveCotizacionSoapIn" />
+      <wsdl:output message="tns:resuelveCotizacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ingresaPedido">
+      <wsdl:input message="tns:ingresaPedidoSoapIn" />
+      <wsdl:output message="tns:ingresaPedidoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultaPrecios">
+      <wsdl:input message="tns:consultaPreciosSoapIn" />
+      <wsdl:output message="tns:consultaPreciosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listaDetallePedido">
+      <wsdl:input message="tns:listaDetallePedidoSoapIn" />
+      <wsdl:output message="tns:listaDetallePedidoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listaPedidos">
+      <wsdl:input message="tns:listaPedidosSoapIn" />
+      <wsdl:output message="tns:listaPedidosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneDetalleCliente">
+      <wsdl:input message="tns:obtieneDetalleClienteSoapIn" />
+      <wsdl:output message="tns:obtieneDetalleClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneStockMaterial">
+      <wsdl:input message="tns:obtieneStockMaterialSoapIn" />
+      <wsdl:output message="tns:obtieneStockMaterialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneParametrosSap">
+      <wsdl:input message="tns:obtieneParametrosSapSoapIn" />
+      <wsdl:output message="tns:obtieneParametrosSapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="rep_zsd53">
+      <wsdl:input message="tns:rep_zsd53SoapIn" />
+      <wsdl:output message="tns:rep_zsd53SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneEstadoPedido">
+      <wsdl:input message="tns:obtieneEstadoPedidoSoapIn" />
+      <wsdl:output message="tns:obtieneEstadoPedidoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneEstadoReparto">
+      <wsdl:input message="tns:obtieneEstadoRepartoSoapIn" />
+      <wsdl:output message="tns:obtieneEstadoRepartoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneDetalleEntrega">
+      <wsdl:input message="tns:obtieneDetalleEntregaSoapIn" />
+      <wsdl:output message="tns:obtieneDetalleEntregaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductosXDescripcion">
+      <wsdl:input message="tns:getProductosXDescripcionSoapIn" />
+      <wsdl:output message="tns:getProductosXDescripcionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductosXHistoria">
+      <wsdl:input message="tns:getProductosXHistoriaSoapIn" />
+      <wsdl:output message="tns:getProductosXHistoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUsuario">
+      <wsdl:input message="tns:getUsuarioSoapIn" />
+      <wsdl:output message="tns:getUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPrivilegio">
+      <wsdl:input message="tns:getPrivilegioSoapIn" />
+      <wsdl:output message="tns:getPrivilegioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDocumento">
+      <wsdl:input message="tns:getDocumentoSoapIn" />
+      <wsdl:output message="tns:getDocumentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneStockMaterial2">
+      <wsdl:input message="tns:obtieneStockMaterial2SoapIn" />
+      <wsdl:output message="tns:obtieneStockMaterial2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="testCola">
+      <wsdl:input message="tns:testColaSoapIn" />
+      <wsdl:output message="tns:testColaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="eCatSrvSoap" type="tns:eCatSrvSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="getAreas">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/getAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFamilias">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/getFamilias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSubFamilias">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/getSubFamilias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAtributos">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/getAtributos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAtributosXProd">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/getAtributosXProd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getValoresAtributos">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/getValoresAtributos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductos">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/getProductos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resuelveCotizacion">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/resuelveCotizacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ingresaPedido">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/ingresaPedido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultaPrecios">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/consultaPrecios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaDetallePedido">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/listaDetallePedido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaPedidos">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/listaPedidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneDetalleCliente">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/obtieneDetalleCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneStockMaterial">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/obtieneStockMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneParametrosSap">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/obtieneParametrosSap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rep_zsd53">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/rep_zsd53" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneEstadoPedido">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/obtieneEstadoPedido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneEstadoReparto">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/obtieneEstadoReparto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneDetalleEntrega">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/obtieneDetalleEntrega" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductosXDescripcion">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/getProductosXDescripcion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductosXHistoria">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/getProductosXHistoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsuario">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/getUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPrivilegio">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/getPrivilegio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDocumento">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/getDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneStockMaterial2">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/obtieneStockMaterial2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testCola">
+      <soap:operation soapAction="http://tempuri.org/ecatSrv/Service1/testCola" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="eCatSrv">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/" />
+    <wsdl:port name="eCatSrvSoap" binding="tns:eCatSrvSoap">
+      <soap:address location="http://localhost/ws/ecatsrv.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

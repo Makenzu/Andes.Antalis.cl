@@ -1,0 +1,3359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://ecatalogo.gms.cl/ecatSrv" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://ecatalogo.gms.cl/ecatSrv" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ecatalogo.gms.cl/ecatSrv">
+      <s:element name="dummy1">
+        <s:complexType />
+      </s:element>
+      <s:element name="dummy1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dummy1Result" type="tns:stSesionEcatalogo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="stSesionEcatalogo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="usuario" type="tns:stUsuario" />
+          <s:element minOccurs="1" maxOccurs="1" name="cliente" type="tns:stCliente" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stUsuario">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fechaUltAcc" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="fechaCreacion" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="fechaUltAct" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="apellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="userCrea" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="pwdExpira" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="privilegios" type="tns:ArrayOfStPrivilegioUsuario" />
+          <s:element minOccurs="1" maxOccurs="1" name="preferencias" type="tns:stPreferencias" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfStPrivilegioUsuario">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="stPrivilegioUsuario" type="tns:stPrivilegioUsuario" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stPrivilegioUsuario">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stPreferencias">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigoDestinatarioMercancia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoDespacharPor" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stCliente">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="razonSocial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoMoneda" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="rutCliente" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dirComercial" type="tns:stDireccionPostal" />
+          <s:element minOccurs="1" maxOccurs="1" name="dirFacturacion" type="tns:stDireccionPostal" />
+          <s:element minOccurs="1" maxOccurs="1" name="dirDespacho" type="tns:stDireccionPostal" />
+          <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="tipoCorrelativo" type="tns:eTipoCorrelativo" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoPromotora" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombrePromotora" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="clasificacionABC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoCelula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoCobrador" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombreCobrador" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoCondicionPago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcionCondicionPago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoViaPago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcionViaPago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoClaseRiesgo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcionClaseRiesgo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="montoMinimoCompra" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ePesos" type="tns:stEPesos" />
+          <s:element minOccurs="1" maxOccurs="1" name="contacto" type="tns:stContacto" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoVendedoraVirtual" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombreVendedoraVirtual" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stDireccionPostal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="calle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="comuna" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ciudad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="region" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoPostal" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="eTipoCorrelativo">
+        <s:restriction base="s:string">
+          <s:enumeration value="manual" />
+          <s:enumeration value="automatico" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="stEPesos">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="valSaldoActual" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="valMinimoAcumulado" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="valMinimoCompra" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="factorCompra" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stContacto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fax" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="dummy2">
+        <s:complexType />
+      </s:element>
+      <s:element name="dummy2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dummy2Result" type="tns:CPlazoPago" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CPlazoPago">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="denominacion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="dummy3">
+        <s:complexType />
+      </s:element>
+      <s:element name="dummy3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dummy3Result" type="tns:eTipoTransformacionMaterial" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="eTipoTransformacionMaterial">
+        <s:restriction base="s:string">
+          <s:enumeration value="ninguna" />
+          <s:enumeration value="bobinas" />
+          <s:enumeration value="mantillas" />
+          <s:enumeration value="planchas" />
+          <s:enumeration value="otro" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="dummy4">
+        <s:complexType />
+      </s:element>
+      <s:element name="dummy4Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dummy4Result" type="tns:CPedido" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CPedido">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombreResponsable" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="numeroPedidoCliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="numeroPedidoSAP" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="descuentoEPesos" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="bonificacionEPesos" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="totalNeto" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="indicacionesTransportista" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoDestinatarioMercancia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoDespacharPor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoResultadoIngreso" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="aplicaRecargoFlete" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="claseDocumento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="observaciones" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mensajeSistema" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="idCanasta" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoBloqueoEntrega" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoBloqueoFacturacion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="aplicaDespachoRegiones" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="modalidadCargoDespachoRegiones" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="condicionesPrecio" type="tns:ArrayOfCCondicionPrecio" />
+          <s:element minOccurs="1" maxOccurs="1" name="codigoEstado" type="tns:eEstadoPedido" />
+          <s:element minOccurs="0" maxOccurs="1" name="posiciones" type="tns:ArrayOfCPosicionPedido" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCCondicionPrecio">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CCondicionPrecio" nillable="true" type="tns:CCondicionPrecio" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CCondicionPrecio">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="posicion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="clase" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="valor" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="moneda" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="unidadCondicion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tipoCalculo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cantidadBase" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="eEstadoPedido">
+        <s:restriction base="s:string">
+          <s:enumeration value="ninguno" />
+          <s:enumeration value="anulado" />
+          <s:enumeration value="enProceso" />
+          <s:enumeration value="procesado" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfCPosicionPedido">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CPosicionPedido" nillable="true" type="tns:CPosicionPedido" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CPosicionPedido">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idPosicion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoProducto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="unidadVenta" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="valorUnitario" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="valorItem" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="valorUnitarioNormal" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="valorItemNormal" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="plazoPago" type="tns:CPlazoPago" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="dummy5">
+        <s:complexType />
+      </s:element>
+      <s:element name="dummy5Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dummy5Result" type="tns:eModalidadCargoDespachoRegiones" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="eModalidadCargoDespachoRegiones">
+        <s:restriction base="s:string">
+          <s:enumeration value="prorrateo" />
+          <s:enumeration value="posicion" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="dummy6">
+        <s:complexType />
+      </s:element>
+      <s:element name="dummy6Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dummy6Result" type="tns:CCondicionPrecio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAreas">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAreasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAreasResult" type="tns:ArrayOfStAreas" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStAreas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="stAreas" type="tns:stAreas" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stAreas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="gls_area" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getFamilias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoArea" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFamiliasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getFamiliasResult" type="tns:ArrayOfStFamilias" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStFamilias">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="stFamilias" type="tns:stFamilias" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stFamilias">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_familia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="gls_familia" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getSubFamilias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFamilia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSubFamiliasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSubFamiliasResult" type="tns:ArrayOfStSubFamilias" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStSubFamilias">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="stSubFamilias" type="tns:stSubFamilias" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stSubFamilias">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_familia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_subfamilia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="gls_subfamilia" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getAtributos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFamilia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSubfamilia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAtributosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAtributosResult" type="tns:ArrayOfStAtributos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStAtributos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="stAtributos" type="tns:stAtributos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stAtributos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_familia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_subfamilia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_atributo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getAtributosXProd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoProducto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAtributosXProdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAtributosXProdResult" type="tns:ArrayOfStAtribXProd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStAtribXProd">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="stAtribXProd" type="tns:stAtribXProd" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stAtribXProd">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_producto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_atributo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_valor_atributo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getValoresAtributos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFamilia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSubfamilia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo6" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo6" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getValoresAtributosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getValoresAtributosResult" type="tns:ArrayOfStValoresAtributos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStValoresAtributos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="stValoresAtributos" type="tns:stValoresAtributos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stValoresAtributos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_familia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_subfamilia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_atributo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_valor_atributo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getProductos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFamilia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSubfamilia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoProducto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAtributo6" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoValorAtributo6" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCentro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getProductosResult" type="tns:ArrayOfStProductos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStProductos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="stProductos" type="tns:stProductos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stProductos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_familia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_subfamilia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_producto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="gls_producto" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ind_stock" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ind_descontinuado" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="gls_unidad_venta" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fc_uemp_uvta" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="es_favorito" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getProductosXDescripcion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="patron" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductosXDescripcionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getProductosXDescripcionResult" type="tns:ArrayOfStProductos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductosXCodigo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="patron" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductosXCodigoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getProductosXCodigoResult" type="tns:ArrayOfStProductos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductoXCodigo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoProducto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductoXCodigoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getProductoXCodigoResult" type="tns:stProductos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductosXHistoria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaIni" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaFin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductosXHistoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getProductosXHistoriaResult" type="tns:ArrayOfStProductos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlGrabaCotizacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlGrabaCotizacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlGrabaCotizacionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlGrabaPedido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlGrabaPedidoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlGrabaPedidoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlCalculaPrecios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlCalculaPreciosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlCalculaPreciosResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlObtieneDetallePedido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlObtieneDetallePedidoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlObtieneDetallePedidoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlListaPedidos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlListaPedidosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlListaPedidosResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlObtieneStockMaterial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlObtieneStockMaterialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlObtieneStockMaterialResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlObtieneParametrosSap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlObtieneParametrosSapResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlObtieneParametrosSapResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlObtieneEstadoPedido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlObtieneEstadoPedidoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlObtieneEstadoPedidoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlObtieneEstadoReparto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlObtieneEstadoRepartoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlObtieneEstadoRepartoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlObtieneDetalleEntrega">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlObtieneDetalleEntregaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlObtieneDetalleEntregaResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaUsuarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaUsuariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaUsuariosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaPrivilegios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaPrivilegiosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaPrivilegiosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDocumento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSucursal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDocumentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDocumentoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneStockMaterial2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlMsg">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneStockMaterial2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneStockMaterial2Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="grabaCotizacionProdCalculados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="claseDocumento" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sesionEcatalogo" type="tns:stSesionEcatalogo" />
+            <s:element minOccurs="0" maxOccurs="1" name="canasta" type="tns:CCanasta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CCanasta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cabecera" type="tns:CCabeceraCanasta" />
+          <s:element minOccurs="0" maxOccurs="1" name="posiciones" type="tns:ArrayOfCPosicionCanasta" />
+          <s:element minOccurs="1" maxOccurs="1" name="valorDespachoFleteRegiones" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="valorDespachoFleteRegiones2" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CCabeceraCanasta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoMoneda" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="codigoEstado" type="tns:eEstadoCanasta" />
+          <s:element minOccurs="0" maxOccurs="1" name="fechaRegistro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fechaCotizacion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="secuencia" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="eEstadoCanasta">
+        <s:restriction base="s:string">
+          <s:enumeration value="activa" />
+          <s:enumeration value="cotizada" />
+          <s:enumeration value="anulada" />
+          <s:enumeration value="colocada" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfCPosicionCanasta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CPosicionCanasta" nillable="true" type="tns:CPosicionCanasta" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CPosicionCanasta">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idPosicion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoProducto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="unidadVenta" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="valorUnitario" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="valorItem" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="valorUnitarioNormal" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="valorItemNormal" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="valorImpuesto" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="plazoPago" type="tns:CPlazoPago" />
+          <s:element minOccurs="1" maxOccurs="1" name="codigoEstado" type="tns:eEstadoPosicion" />
+          <s:element minOccurs="1" maxOccurs="1" name="eliminado" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="grabado" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="tipoTransformacion" type="tns:eTipoTransformacionMaterial" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="eEstadoPosicion">
+        <s:restriction base="s:string">
+          <s:enumeration value="calculada" />
+          <s:enumeration value="colocada" />
+          <s:enumeration value="descartada" />
+          <s:enumeration value="cotizada" />
+          <s:enumeration value="sinCalcular" />
+          <s:enumeration value="pendienteColocacion" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="grabaCotizacionProdCalculadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="grabaCotizacionProdCalculadosResult" type="tns:stResultado" />
+            <s:element minOccurs="0" maxOccurs="1" name="canasta" type="tns:CCanasta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="stResultado">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="codigo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="tag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mensaje" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="codigo2" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="mensaje2" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="grabaCotizacionProdRezagados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="claseDocumento" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sesionEcatalogo" type="tns:stSesionEcatalogo" />
+            <s:element minOccurs="0" maxOccurs="1" name="canasta" type="tns:CCanasta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="grabaCotizacionProdRezagadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="grabaCotizacionProdRezagadosResult" type="tns:stResultado" />
+            <s:element minOccurs="0" maxOccurs="1" name="canasta" type="tns:CCanasta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="grabaPedido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pedido" type="tns:CPedido" />
+            <s:element minOccurs="1" maxOccurs="1" name="sesionEcatalogo" type="tns:stSesionEcatalogo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="grabaPedidoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="grabaPedidoResult" type="tns:stResultado" />
+            <s:element minOccurs="0" maxOccurs="1" name="pedido" type="tns:CPedido" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="calculaPrecios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="claseDocumento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="plazoPago" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sesionEcatalogo" type="tns:stSesionEcatalogo" />
+            <s:element minOccurs="0" maxOccurs="1" name="canasta" type="tns:CCanasta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="calculaPreciosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="calculaPreciosResult" type="tns:stResultado" />
+            <s:element minOccurs="0" maxOccurs="1" name="canasta" type="tns:CCanasta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="testCola">
+        <s:complexType />
+      </s:element>
+      <s:element name="testColaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="testColaResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneMaestroCliente_SAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneMaestroCliente_SAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="obtieneMaestroCliente_SAPResult" type="tns:stCliente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="esClienteEcatalogo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="esClienteEcatalogoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="esClienteEcatalogoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="defineMaestroCliente_ECAT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="maestroCliente" type="tns:stCliente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="defineMaestroCliente_ECATResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="obtieneCorrelativoCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneCorrelativoClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="obtieneCorrelativoClienteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="grabaCorrelativoCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="correlativo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="grabaCorrelativoClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="grabaCorrelativoClienteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="tipoCorrelativoCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="tipoCorrelativoClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tipoCorrelativoClienteResult" type="tns:eTipoCorrelativo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="autenticaUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="autenticaUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="autenticaUsuarioResult" type="tns:stResultado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneMaestroUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneMaestroUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="obtieneMaestroUsuarioResult" type="tns:stUsuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="borraUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="borraUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="borraUsuarioResult" type="tns:stResultado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="defineMaestroUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="infoUsuario" type="tns:stUsuario" />
+            <s:element minOccurs="1" maxOccurs="1" name="creaUsuario" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="defineMaestroUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="defineMaestroUsuarioResult" type="tns:stResultado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneDireccionesDespacho">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneDireccionesDespachoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneDireccionesDespachoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneDespacharPor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ciudad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneDespacharPorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneDespacharPorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="esClasificacionABCSinRecargoDespacho">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clasificacionAbc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="esClasificacionABCSinRecargoDespachoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="esClasificacionABCSinRecargoDespachoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtienePrivilegiosUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtienePrivilegiosUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtienePrivilegiosUsuarioResult" type="tns:ArrayOfStPrivilegioUsuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="definePrivilegioUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoPrivilegio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="definePrivilegioUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="definePrivilegioUsuarioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="borraPrivilegioUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="borraPrivilegioUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="borraPrivilegioUsuarioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneIdCanasta">
+        <s:complexType />
+      </s:element>
+      <s:element name="obtieneIdCanastaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="obtieneIdCanastaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="marcaCanastaCotizada">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="canasta" type="tns:CCanasta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="marcaCanastaCotizadaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="grabaCanasta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="canasta" type="tns:CCanasta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="grabaCanastaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="canasta" type="tns:CCanasta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="grabaCanastaV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="canasta" type="tns:CCanasta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="grabaCanastaV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="canasta" type="tns:CCanasta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneCanasta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idCanasta" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneCanastaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneCanastaResult" type="tns:CCanasta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="grabaDestinatarioMercanciaPorDefecto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoDestinatarioMercancia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="grabaDestinatarioMercanciaPorDefectoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="grabaDestinatarioMercanciaPorDefectoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="grabaDespacharPorPorDefecto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoDespacharPor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="grabaDespacharPorPorDefectoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="grabaDespacharPorPorDefectoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtienePlazosPagoEspecialesCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtienePlazosPagoEspecialesClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtienePlazosPagoEspecialesClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="esDiaHabil">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fecha" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="esDiaHabilResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="esDiaHabilResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="agregaFavoritos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="arrProductos" type="tns:ArrayOfStProductos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="agregaFavoritosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="agregaFavoritosResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminaFavoritos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="arrProductos" type="tns:ArrayOfStProductos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminaFavoritosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminaFavoritosResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneFavoritos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneFavoritosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneFavoritosResult" type="tns:ArrayOfStProductos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneCategorias">
+        <s:complexType />
+      </s:element>
+      <s:element name="obtieneCategoriasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneCategoriasResult" type="tns:ArrayOfStCategoria" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStCategoria">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="stCategoria" type="tns:stCategoria" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stCategoria">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="denominacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="dummy1SoapIn">
+    <wsdl:part name="parameters" element="tns:dummy1" />
+  </wsdl:message>
+  <wsdl:message name="dummy1SoapOut">
+    <wsdl:part name="parameters" element="tns:dummy1Response" />
+  </wsdl:message>
+  <wsdl:message name="dummy2SoapIn">
+    <wsdl:part name="parameters" element="tns:dummy2" />
+  </wsdl:message>
+  <wsdl:message name="dummy2SoapOut">
+    <wsdl:part name="parameters" element="tns:dummy2Response" />
+  </wsdl:message>
+  <wsdl:message name="dummy3SoapIn">
+    <wsdl:part name="parameters" element="tns:dummy3" />
+  </wsdl:message>
+  <wsdl:message name="dummy3SoapOut">
+    <wsdl:part name="parameters" element="tns:dummy3Response" />
+  </wsdl:message>
+  <wsdl:message name="dummy4SoapIn">
+    <wsdl:part name="parameters" element="tns:dummy4" />
+  </wsdl:message>
+  <wsdl:message name="dummy4SoapOut">
+    <wsdl:part name="parameters" element="tns:dummy4Response" />
+  </wsdl:message>
+  <wsdl:message name="dummy5SoapIn">
+    <wsdl:part name="parameters" element="tns:dummy5" />
+  </wsdl:message>
+  <wsdl:message name="dummy5SoapOut">
+    <wsdl:part name="parameters" element="tns:dummy5Response" />
+  </wsdl:message>
+  <wsdl:message name="dummy6SoapIn">
+    <wsdl:part name="parameters" element="tns:dummy6" />
+  </wsdl:message>
+  <wsdl:message name="dummy6SoapOut">
+    <wsdl:part name="parameters" element="tns:dummy6Response" />
+  </wsdl:message>
+  <wsdl:message name="getAreasSoapIn">
+    <wsdl:part name="parameters" element="tns:getAreas" />
+  </wsdl:message>
+  <wsdl:message name="getAreasSoapOut">
+    <wsdl:part name="parameters" element="tns:getAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFamiliasSoapIn">
+    <wsdl:part name="parameters" element="tns:getFamilias" />
+  </wsdl:message>
+  <wsdl:message name="getFamiliasSoapOut">
+    <wsdl:part name="parameters" element="tns:getFamiliasResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSubFamiliasSoapIn">
+    <wsdl:part name="parameters" element="tns:getSubFamilias" />
+  </wsdl:message>
+  <wsdl:message name="getSubFamiliasSoapOut">
+    <wsdl:part name="parameters" element="tns:getSubFamiliasResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAtributosSoapIn">
+    <wsdl:part name="parameters" element="tns:getAtributos" />
+  </wsdl:message>
+  <wsdl:message name="getAtributosSoapOut">
+    <wsdl:part name="parameters" element="tns:getAtributosResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAtributosXProdSoapIn">
+    <wsdl:part name="parameters" element="tns:getAtributosXProd" />
+  </wsdl:message>
+  <wsdl:message name="getAtributosXProdSoapOut">
+    <wsdl:part name="parameters" element="tns:getAtributosXProdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getValoresAtributosSoapIn">
+    <wsdl:part name="parameters" element="tns:getValoresAtributos" />
+  </wsdl:message>
+  <wsdl:message name="getValoresAtributosSoapOut">
+    <wsdl:part name="parameters" element="tns:getValoresAtributosResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProductosSoapIn">
+    <wsdl:part name="parameters" element="tns:getProductos" />
+  </wsdl:message>
+  <wsdl:message name="getProductosSoapOut">
+    <wsdl:part name="parameters" element="tns:getProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProductosXDescripcionSoapIn">
+    <wsdl:part name="parameters" element="tns:getProductosXDescripcion" />
+  </wsdl:message>
+  <wsdl:message name="getProductosXDescripcionSoapOut">
+    <wsdl:part name="parameters" element="tns:getProductosXDescripcionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProductosXCodigoSoapIn">
+    <wsdl:part name="parameters" element="tns:getProductosXCodigo" />
+  </wsdl:message>
+  <wsdl:message name="getProductosXCodigoSoapOut">
+    <wsdl:part name="parameters" element="tns:getProductosXCodigoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProductoXCodigoSoapIn">
+    <wsdl:part name="parameters" element="tns:getProductoXCodigo" />
+  </wsdl:message>
+  <wsdl:message name="getProductoXCodigoSoapOut">
+    <wsdl:part name="parameters" element="tns:getProductoXCodigoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProductosXHistoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:getProductosXHistoria" />
+  </wsdl:message>
+  <wsdl:message name="getProductosXHistoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:getProductosXHistoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="xmlGrabaCotizacionSoapIn">
+    <wsdl:part name="parameters" element="tns:xmlGrabaCotizacion" />
+  </wsdl:message>
+  <wsdl:message name="xmlGrabaCotizacionSoapOut">
+    <wsdl:part name="parameters" element="tns:xmlGrabaCotizacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="xmlGrabaPedidoSoapIn">
+    <wsdl:part name="parameters" element="tns:xmlGrabaPedido" />
+  </wsdl:message>
+  <wsdl:message name="xmlGrabaPedidoSoapOut">
+    <wsdl:part name="parameters" element="tns:xmlGrabaPedidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="xmlCalculaPreciosSoapIn">
+    <wsdl:part name="parameters" element="tns:xmlCalculaPrecios" />
+  </wsdl:message>
+  <wsdl:message name="xmlCalculaPreciosSoapOut">
+    <wsdl:part name="parameters" element="tns:xmlCalculaPreciosResponse" />
+  </wsdl:message>
+  <wsdl:message name="xmlObtieneDetallePedidoSoapIn">
+    <wsdl:part name="parameters" element="tns:xmlObtieneDetallePedido" />
+  </wsdl:message>
+  <wsdl:message name="xmlObtieneDetallePedidoSoapOut">
+    <wsdl:part name="parameters" element="tns:xmlObtieneDetallePedidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="xmlListaPedidosSoapIn">
+    <wsdl:part name="parameters" element="tns:xmlListaPedidos" />
+  </wsdl:message>
+  <wsdl:message name="xmlListaPedidosSoapOut">
+    <wsdl:part name="parameters" element="tns:xmlListaPedidosResponse" />
+  </wsdl:message>
+  <wsdl:message name="xmlObtieneStockMaterialSoapIn">
+    <wsdl:part name="parameters" element="tns:xmlObtieneStockMaterial" />
+  </wsdl:message>
+  <wsdl:message name="xmlObtieneStockMaterialSoapOut">
+    <wsdl:part name="parameters" element="tns:xmlObtieneStockMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="xmlObtieneParametrosSapSoapIn">
+    <wsdl:part name="parameters" element="tns:xmlObtieneParametrosSap" />
+  </wsdl:message>
+  <wsdl:message name="xmlObtieneParametrosSapSoapOut">
+    <wsdl:part name="parameters" element="tns:xmlObtieneParametrosSapResponse" />
+  </wsdl:message>
+  <wsdl:message name="xmlObtieneEstadoPedidoSoapIn">
+    <wsdl:part name="parameters" element="tns:xmlObtieneEstadoPedido" />
+  </wsdl:message>
+  <wsdl:message name="xmlObtieneEstadoPedidoSoapOut">
+    <wsdl:part name="parameters" element="tns:xmlObtieneEstadoPedidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="xmlObtieneEstadoRepartoSoapIn">
+    <wsdl:part name="parameters" element="tns:xmlObtieneEstadoReparto" />
+  </wsdl:message>
+  <wsdl:message name="xmlObtieneEstadoRepartoSoapOut">
+    <wsdl:part name="parameters" element="tns:xmlObtieneEstadoRepartoResponse" />
+  </wsdl:message>
+  <wsdl:message name="xmlObtieneDetalleEntregaSoapIn">
+    <wsdl:part name="parameters" element="tns:xmlObtieneDetalleEntrega" />
+  </wsdl:message>
+  <wsdl:message name="xmlObtieneDetalleEntregaSoapOut">
+    <wsdl:part name="parameters" element="tns:xmlObtieneDetalleEntregaResponse" />
+  </wsdl:message>
+  <wsdl:message name="listaUsuariosSoapIn">
+    <wsdl:part name="parameters" element="tns:listaUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="listaUsuariosSoapOut">
+    <wsdl:part name="parameters" element="tns:listaUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="listaPrivilegiosSoapIn">
+    <wsdl:part name="parameters" element="tns:listaPrivilegios" />
+  </wsdl:message>
+  <wsdl:message name="listaPrivilegiosSoapOut">
+    <wsdl:part name="parameters" element="tns:listaPrivilegiosResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentoSoapIn">
+    <wsdl:part name="parameters" element="tns:getDocumento" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentoSoapOut">
+    <wsdl:part name="parameters" element="tns:getDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneStockMaterial2SoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneStockMaterial2" />
+  </wsdl:message>
+  <wsdl:message name="obtieneStockMaterial2SoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneStockMaterial2Response" />
+  </wsdl:message>
+  <wsdl:message name="grabaCotizacionProdCalculadosSoapIn">
+    <wsdl:part name="parameters" element="tns:grabaCotizacionProdCalculados" />
+  </wsdl:message>
+  <wsdl:message name="grabaCotizacionProdCalculadosSoapOut">
+    <wsdl:part name="parameters" element="tns:grabaCotizacionProdCalculadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="grabaCotizacionProdRezagadosSoapIn">
+    <wsdl:part name="parameters" element="tns:grabaCotizacionProdRezagados" />
+  </wsdl:message>
+  <wsdl:message name="grabaCotizacionProdRezagadosSoapOut">
+    <wsdl:part name="parameters" element="tns:grabaCotizacionProdRezagadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="grabaPedidoSoapIn">
+    <wsdl:part name="parameters" element="tns:grabaPedido" />
+  </wsdl:message>
+  <wsdl:message name="grabaPedidoSoapOut">
+    <wsdl:part name="parameters" element="tns:grabaPedidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="calculaPreciosSoapIn">
+    <wsdl:part name="parameters" element="tns:calculaPrecios" />
+  </wsdl:message>
+  <wsdl:message name="calculaPreciosSoapOut">
+    <wsdl:part name="parameters" element="tns:calculaPreciosResponse" />
+  </wsdl:message>
+  <wsdl:message name="testColaSoapIn">
+    <wsdl:part name="parameters" element="tns:testCola" />
+  </wsdl:message>
+  <wsdl:message name="testColaSoapOut">
+    <wsdl:part name="parameters" element="tns:testColaResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneMaestroCliente_SAPSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneMaestroCliente_SAP" />
+  </wsdl:message>
+  <wsdl:message name="obtieneMaestroCliente_SAPSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneMaestroCliente_SAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="esClienteEcatalogoSoapIn">
+    <wsdl:part name="parameters" element="tns:esClienteEcatalogo" />
+  </wsdl:message>
+  <wsdl:message name="esClienteEcatalogoSoapOut">
+    <wsdl:part name="parameters" element="tns:esClienteEcatalogoResponse" />
+  </wsdl:message>
+  <wsdl:message name="defineMaestroCliente_ECATSoapIn">
+    <wsdl:part name="parameters" element="tns:defineMaestroCliente_ECAT" />
+  </wsdl:message>
+  <wsdl:message name="defineMaestroCliente_ECATSoapOut">
+    <wsdl:part name="parameters" element="tns:defineMaestroCliente_ECATResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneCorrelativoClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneCorrelativoCliente" />
+  </wsdl:message>
+  <wsdl:message name="obtieneCorrelativoClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneCorrelativoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="grabaCorrelativoClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:grabaCorrelativoCliente" />
+  </wsdl:message>
+  <wsdl:message name="grabaCorrelativoClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:grabaCorrelativoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="tipoCorrelativoClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:tipoCorrelativoCliente" />
+  </wsdl:message>
+  <wsdl:message name="tipoCorrelativoClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:tipoCorrelativoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="autenticaUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:autenticaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="autenticaUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:autenticaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneMaestroUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneMaestroUsuario" />
+  </wsdl:message>
+  <wsdl:message name="obtieneMaestroUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneMaestroUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="borraUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:borraUsuario" />
+  </wsdl:message>
+  <wsdl:message name="borraUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:borraUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="defineMaestroUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:defineMaestroUsuario" />
+  </wsdl:message>
+  <wsdl:message name="defineMaestroUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:defineMaestroUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneDireccionesDespachoSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneDireccionesDespacho" />
+  </wsdl:message>
+  <wsdl:message name="obtieneDireccionesDespachoSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneDireccionesDespachoResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneDespacharPorSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneDespacharPor" />
+  </wsdl:message>
+  <wsdl:message name="obtieneDespacharPorSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneDespacharPorResponse" />
+  </wsdl:message>
+  <wsdl:message name="esClasificacionABCSinRecargoDespachoSoapIn">
+    <wsdl:part name="parameters" element="tns:esClasificacionABCSinRecargoDespacho" />
+  </wsdl:message>
+  <wsdl:message name="esClasificacionABCSinRecargoDespachoSoapOut">
+    <wsdl:part name="parameters" element="tns:esClasificacionABCSinRecargoDespachoResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtienePrivilegiosUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:obtienePrivilegiosUsuario" />
+  </wsdl:message>
+  <wsdl:message name="obtienePrivilegiosUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:obtienePrivilegiosUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="definePrivilegioUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:definePrivilegioUsuario" />
+  </wsdl:message>
+  <wsdl:message name="definePrivilegioUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:definePrivilegioUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="borraPrivilegioUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:borraPrivilegioUsuario" />
+  </wsdl:message>
+  <wsdl:message name="borraPrivilegioUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:borraPrivilegioUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneIdCanastaSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneIdCanasta" />
+  </wsdl:message>
+  <wsdl:message name="obtieneIdCanastaSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneIdCanastaResponse" />
+  </wsdl:message>
+  <wsdl:message name="marcaCanastaCotizadaSoapIn">
+    <wsdl:part name="parameters" element="tns:marcaCanastaCotizada" />
+  </wsdl:message>
+  <wsdl:message name="marcaCanastaCotizadaSoapOut">
+    <wsdl:part name="parameters" element="tns:marcaCanastaCotizadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="grabaCanastaSoapIn">
+    <wsdl:part name="parameters" element="tns:grabaCanasta" />
+  </wsdl:message>
+  <wsdl:message name="grabaCanastaSoapOut">
+    <wsdl:part name="parameters" element="tns:grabaCanastaResponse" />
+  </wsdl:message>
+  <wsdl:message name="grabaCanastaV2SoapIn">
+    <wsdl:part name="parameters" element="tns:grabaCanastaV2" />
+  </wsdl:message>
+  <wsdl:message name="grabaCanastaV2SoapOut">
+    <wsdl:part name="parameters" element="tns:grabaCanastaV2Response" />
+  </wsdl:message>
+  <wsdl:message name="obtieneCanastaSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneCanasta" />
+  </wsdl:message>
+  <wsdl:message name="obtieneCanastaSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneCanastaResponse" />
+  </wsdl:message>
+  <wsdl:message name="grabaDestinatarioMercanciaPorDefectoSoapIn">
+    <wsdl:part name="parameters" element="tns:grabaDestinatarioMercanciaPorDefecto" />
+  </wsdl:message>
+  <wsdl:message name="grabaDestinatarioMercanciaPorDefectoSoapOut">
+    <wsdl:part name="parameters" element="tns:grabaDestinatarioMercanciaPorDefectoResponse" />
+  </wsdl:message>
+  <wsdl:message name="grabaDespacharPorPorDefectoSoapIn">
+    <wsdl:part name="parameters" element="tns:grabaDespacharPorPorDefecto" />
+  </wsdl:message>
+  <wsdl:message name="grabaDespacharPorPorDefectoSoapOut">
+    <wsdl:part name="parameters" element="tns:grabaDespacharPorPorDefectoResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtienePlazosPagoEspecialesClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:obtienePlazosPagoEspecialesCliente" />
+  </wsdl:message>
+  <wsdl:message name="obtienePlazosPagoEspecialesClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:obtienePlazosPagoEspecialesClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="esDiaHabilSoapIn">
+    <wsdl:part name="parameters" element="tns:esDiaHabil" />
+  </wsdl:message>
+  <wsdl:message name="esDiaHabilSoapOut">
+    <wsdl:part name="parameters" element="tns:esDiaHabilResponse" />
+  </wsdl:message>
+  <wsdl:message name="agregaFavoritosSoapIn">
+    <wsdl:part name="parameters" element="tns:agregaFavoritos" />
+  </wsdl:message>
+  <wsdl:message name="agregaFavoritosSoapOut">
+    <wsdl:part name="parameters" element="tns:agregaFavoritosResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminaFavoritosSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminaFavoritos" />
+  </wsdl:message>
+  <wsdl:message name="eliminaFavoritosSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminaFavoritosResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneFavoritosSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneFavoritos" />
+  </wsdl:message>
+  <wsdl:message name="obtieneFavoritosSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneFavoritosResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneCategoriasSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneCategorias" />
+  </wsdl:message>
+  <wsdl:message name="obtieneCategoriasSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneCategoriasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="eCatSrvSoap">
+    <wsdl:operation name="dummy1">
+      <wsdl:input message="tns:dummy1SoapIn" />
+      <wsdl:output message="tns:dummy1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dummy2">
+      <wsdl:input message="tns:dummy2SoapIn" />
+      <wsdl:output message="tns:dummy2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dummy3">
+      <wsdl:input message="tns:dummy3SoapIn" />
+      <wsdl:output message="tns:dummy3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dummy4">
+      <wsdl:input message="tns:dummy4SoapIn" />
+      <wsdl:output message="tns:dummy4SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dummy5">
+      <wsdl:input message="tns:dummy5SoapIn" />
+      <wsdl:output message="tns:dummy5SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dummy6">
+      <wsdl:input message="tns:dummy6SoapIn" />
+      <wsdl:output message="tns:dummy6SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAreas">
+      <wsdl:input message="tns:getAreasSoapIn" />
+      <wsdl:output message="tns:getAreasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getFamilias">
+      <wsdl:input message="tns:getFamiliasSoapIn" />
+      <wsdl:output message="tns:getFamiliasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSubFamilias">
+      <wsdl:input message="tns:getSubFamiliasSoapIn" />
+      <wsdl:output message="tns:getSubFamiliasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAtributos">
+      <wsdl:input message="tns:getAtributosSoapIn" />
+      <wsdl:output message="tns:getAtributosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAtributosXProd">
+      <wsdl:input message="tns:getAtributosXProdSoapIn" />
+      <wsdl:output message="tns:getAtributosXProdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getValoresAtributos">
+      <wsdl:input message="tns:getValoresAtributosSoapIn" />
+      <wsdl:output message="tns:getValoresAtributosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductos">
+      <wsdl:input message="tns:getProductosSoapIn" />
+      <wsdl:output message="tns:getProductosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductosXDescripcion">
+      <wsdl:input message="tns:getProductosXDescripcionSoapIn" />
+      <wsdl:output message="tns:getProductosXDescripcionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductosXCodigo">
+      <wsdl:input message="tns:getProductosXCodigoSoapIn" />
+      <wsdl:output message="tns:getProductosXCodigoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductoXCodigo">
+      <wsdl:input message="tns:getProductoXCodigoSoapIn" />
+      <wsdl:output message="tns:getProductoXCodigoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductosXHistoria">
+      <wsdl:input message="tns:getProductosXHistoriaSoapIn" />
+      <wsdl:output message="tns:getProductosXHistoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="xmlGrabaCotizacion">
+      <wsdl:input message="tns:xmlGrabaCotizacionSoapIn" />
+      <wsdl:output message="tns:xmlGrabaCotizacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="xmlGrabaPedido">
+      <wsdl:input message="tns:xmlGrabaPedidoSoapIn" />
+      <wsdl:output message="tns:xmlGrabaPedidoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="xmlCalculaPrecios">
+      <wsdl:input message="tns:xmlCalculaPreciosSoapIn" />
+      <wsdl:output message="tns:xmlCalculaPreciosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="xmlObtieneDetallePedido">
+      <wsdl:input message="tns:xmlObtieneDetallePedidoSoapIn" />
+      <wsdl:output message="tns:xmlObtieneDetallePedidoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="xmlListaPedidos">
+      <wsdl:input message="tns:xmlListaPedidosSoapIn" />
+      <wsdl:output message="tns:xmlListaPedidosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="xmlObtieneStockMaterial">
+      <wsdl:input message="tns:xmlObtieneStockMaterialSoapIn" />
+      <wsdl:output message="tns:xmlObtieneStockMaterialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="xmlObtieneParametrosSap">
+      <wsdl:input message="tns:xmlObtieneParametrosSapSoapIn" />
+      <wsdl:output message="tns:xmlObtieneParametrosSapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="xmlObtieneEstadoPedido">
+      <wsdl:input message="tns:xmlObtieneEstadoPedidoSoapIn" />
+      <wsdl:output message="tns:xmlObtieneEstadoPedidoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="xmlObtieneEstadoReparto">
+      <wsdl:input message="tns:xmlObtieneEstadoRepartoSoapIn" />
+      <wsdl:output message="tns:xmlObtieneEstadoRepartoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="xmlObtieneDetalleEntrega">
+      <wsdl:input message="tns:xmlObtieneDetalleEntregaSoapIn" />
+      <wsdl:output message="tns:xmlObtieneDetalleEntregaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listaUsuarios">
+      <wsdl:input message="tns:listaUsuariosSoapIn" />
+      <wsdl:output message="tns:listaUsuariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listaPrivilegios">
+      <wsdl:input message="tns:listaPrivilegiosSoapIn" />
+      <wsdl:output message="tns:listaPrivilegiosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDocumento">
+      <wsdl:input message="tns:getDocumentoSoapIn" />
+      <wsdl:output message="tns:getDocumentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneStockMaterial2">
+      <wsdl:input message="tns:obtieneStockMaterial2SoapIn" />
+      <wsdl:output message="tns:obtieneStockMaterial2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="grabaCotizacionProdCalculados">
+      <wsdl:input message="tns:grabaCotizacionProdCalculadosSoapIn" />
+      <wsdl:output message="tns:grabaCotizacionProdCalculadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="grabaCotizacionProdRezagados">
+      <wsdl:input message="tns:grabaCotizacionProdRezagadosSoapIn" />
+      <wsdl:output message="tns:grabaCotizacionProdRezagadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="grabaPedido">
+      <wsdl:input message="tns:grabaPedidoSoapIn" />
+      <wsdl:output message="tns:grabaPedidoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="calculaPrecios">
+      <wsdl:input message="tns:calculaPreciosSoapIn" />
+      <wsdl:output message="tns:calculaPreciosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="testCola">
+      <wsdl:input message="tns:testColaSoapIn" />
+      <wsdl:output message="tns:testColaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaestroCliente_SAP">
+      <wsdl:input message="tns:obtieneMaestroCliente_SAPSoapIn" />
+      <wsdl:output message="tns:obtieneMaestroCliente_SAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="esClienteEcatalogo">
+      <wsdl:input message="tns:esClienteEcatalogoSoapIn" />
+      <wsdl:output message="tns:esClienteEcatalogoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="defineMaestroCliente_ECAT">
+      <wsdl:input message="tns:defineMaestroCliente_ECATSoapIn" />
+      <wsdl:output message="tns:defineMaestroCliente_ECATSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneCorrelativoCliente">
+      <wsdl:input message="tns:obtieneCorrelativoClienteSoapIn" />
+      <wsdl:output message="tns:obtieneCorrelativoClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="grabaCorrelativoCliente">
+      <wsdl:input message="tns:grabaCorrelativoClienteSoapIn" />
+      <wsdl:output message="tns:grabaCorrelativoClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="tipoCorrelativoCliente">
+      <wsdl:input message="tns:tipoCorrelativoClienteSoapIn" />
+      <wsdl:output message="tns:tipoCorrelativoClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="autenticaUsuario">
+      <wsdl:input message="tns:autenticaUsuarioSoapIn" />
+      <wsdl:output message="tns:autenticaUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaestroUsuario">
+      <wsdl:input message="tns:obtieneMaestroUsuarioSoapIn" />
+      <wsdl:output message="tns:obtieneMaestroUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="borraUsuario">
+      <wsdl:input message="tns:borraUsuarioSoapIn" />
+      <wsdl:output message="tns:borraUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="defineMaestroUsuario">
+      <wsdl:input message="tns:defineMaestroUsuarioSoapIn" />
+      <wsdl:output message="tns:defineMaestroUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneDireccionesDespacho">
+      <wsdl:input message="tns:obtieneDireccionesDespachoSoapIn" />
+      <wsdl:output message="tns:obtieneDireccionesDespachoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneDespacharPor">
+      <wsdl:input message="tns:obtieneDespacharPorSoapIn" />
+      <wsdl:output message="tns:obtieneDespacharPorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="esClasificacionABCSinRecargoDespacho">
+      <wsdl:input message="tns:esClasificacionABCSinRecargoDespachoSoapIn" />
+      <wsdl:output message="tns:esClasificacionABCSinRecargoDespachoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtienePrivilegiosUsuario">
+      <wsdl:input message="tns:obtienePrivilegiosUsuarioSoapIn" />
+      <wsdl:output message="tns:obtienePrivilegiosUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="definePrivilegioUsuario">
+      <wsdl:input message="tns:definePrivilegioUsuarioSoapIn" />
+      <wsdl:output message="tns:definePrivilegioUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="borraPrivilegioUsuario">
+      <wsdl:input message="tns:borraPrivilegioUsuarioSoapIn" />
+      <wsdl:output message="tns:borraPrivilegioUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneIdCanasta">
+      <wsdl:input message="tns:obtieneIdCanastaSoapIn" />
+      <wsdl:output message="tns:obtieneIdCanastaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="marcaCanastaCotizada">
+      <wsdl:input message="tns:marcaCanastaCotizadaSoapIn" />
+      <wsdl:output message="tns:marcaCanastaCotizadaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="grabaCanasta">
+      <wsdl:input message="tns:grabaCanastaSoapIn" />
+      <wsdl:output message="tns:grabaCanastaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="grabaCanastaV2">
+      <wsdl:input message="tns:grabaCanastaV2SoapIn" />
+      <wsdl:output message="tns:grabaCanastaV2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneCanasta">
+      <wsdl:input message="tns:obtieneCanastaSoapIn" />
+      <wsdl:output message="tns:obtieneCanastaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="grabaDestinatarioMercanciaPorDefecto">
+      <wsdl:input message="tns:grabaDestinatarioMercanciaPorDefectoSoapIn" />
+      <wsdl:output message="tns:grabaDestinatarioMercanciaPorDefectoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="grabaDespacharPorPorDefecto">
+      <wsdl:input message="tns:grabaDespacharPorPorDefectoSoapIn" />
+      <wsdl:output message="tns:grabaDespacharPorPorDefectoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtienePlazosPagoEspecialesCliente">
+      <wsdl:input message="tns:obtienePlazosPagoEspecialesClienteSoapIn" />
+      <wsdl:output message="tns:obtienePlazosPagoEspecialesClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="esDiaHabil">
+      <wsdl:input message="tns:esDiaHabilSoapIn" />
+      <wsdl:output message="tns:esDiaHabilSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="agregaFavoritos">
+      <wsdl:input message="tns:agregaFavoritosSoapIn" />
+      <wsdl:output message="tns:agregaFavoritosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminaFavoritos">
+      <wsdl:input message="tns:eliminaFavoritosSoapIn" />
+      <wsdl:output message="tns:eliminaFavoritosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneFavoritos">
+      <wsdl:input message="tns:obtieneFavoritosSoapIn" />
+      <wsdl:output message="tns:obtieneFavoritosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneCategorias">
+      <wsdl:input message="tns:obtieneCategoriasSoapIn" />
+      <wsdl:output message="tns:obtieneCategoriasSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="eCatSrvSoap" type="tns:eCatSrvSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="dummy1">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/dummy1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dummy2">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/dummy2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dummy3">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/dummy3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dummy4">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/dummy4" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dummy5">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/dummy5" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dummy6">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/dummy6" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAreas">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFamilias">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getFamilias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSubFamilias">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getSubFamilias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAtributos">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getAtributos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAtributosXProd">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getAtributosXProd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getValoresAtributos">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getValoresAtributos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductos">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getProductos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductosXDescripcion">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getProductosXDescripcion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductosXCodigo">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getProductosXCodigo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductoXCodigo">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getProductoXCodigo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductosXHistoria">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getProductosXHistoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="xmlGrabaCotizacion">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/xmlGrabaCotizacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="xmlGrabaPedido">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/xmlGrabaPedido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="xmlCalculaPrecios">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/xmlCalculaPrecios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="xmlObtieneDetallePedido">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/xmlObtieneDetallePedido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="xmlListaPedidos">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/xmlListaPedidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="xmlObtieneStockMaterial">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/xmlObtieneStockMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="xmlObtieneParametrosSap">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/xmlObtieneParametrosSap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="xmlObtieneEstadoPedido">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/xmlObtieneEstadoPedido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="xmlObtieneEstadoReparto">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/xmlObtieneEstadoReparto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="xmlObtieneDetalleEntrega">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/xmlObtieneDetalleEntrega" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaUsuarios">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/listaUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaPrivilegios">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/listaPrivilegios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDocumento">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneStockMaterial2">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtieneStockMaterial2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabaCotizacionProdCalculados">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/grabaCotizacionProdCalculados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabaCotizacionProdRezagados">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/grabaCotizacionProdRezagados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabaPedido">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/grabaPedido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculaPrecios">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/calculaPrecios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testCola">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/testCola" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaestroCliente_SAP">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtieneMaestroCliente_SAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="esClienteEcatalogo">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/esClienteEcatalogo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="defineMaestroCliente_ECAT">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/defineMaestroCliente_ECAT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneCorrelativoCliente">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtieneCorrelativoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabaCorrelativoCliente">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/grabaCorrelativoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tipoCorrelativoCliente">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/tipoCorrelativoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="autenticaUsuario">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/autenticaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaestroUsuario">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtieneMaestroUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="borraUsuario">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/borraUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="defineMaestroUsuario">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/defineMaestroUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneDireccionesDespacho">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtieneDireccionesDespacho" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneDespacharPor">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtieneDespacharPor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="esClasificacionABCSinRecargoDespacho">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/esClasificacionABCSinRecargoDespacho" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtienePrivilegiosUsuario">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtienePrivilegiosUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="definePrivilegioUsuario">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/definePrivilegioUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="borraPrivilegioUsuario">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/borraPrivilegioUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneIdCanasta">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtieneIdCanasta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="marcaCanastaCotizada">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/marcaCanastaCotizada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabaCanasta">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/grabaCanasta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabaCanastaV2">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/grabaCanastaV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneCanasta">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtieneCanasta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabaDestinatarioMercanciaPorDefecto">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/grabaDestinatarioMercanciaPorDefecto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabaDespacharPorPorDefecto">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/grabaDespacharPorPorDefecto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtienePlazosPagoEspecialesCliente">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtienePlazosPagoEspecialesCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="esDiaHabil">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/esDiaHabil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="agregaFavoritos">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/agregaFavoritos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminaFavoritos">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/eliminaFavoritos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneFavoritos">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtieneFavoritos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneCategorias">
+      <soap:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtieneCategorias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="eCatSrvSoap12" type="tns:eCatSrvSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+    <wsdl:operation name="dummy1">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/dummy1" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dummy2">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/dummy2" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dummy3">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/dummy3" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dummy4">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/dummy4" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dummy5">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/dummy5" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dummy6">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/dummy6" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAreas">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getAreas" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFamilias">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getFamilias" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSubFamilias">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getSubFamilias" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAtributos">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getAtributos" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAtributosXProd">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getAtributosXProd" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getValoresAtributos">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getValoresAtributos" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductos">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getProductos" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductosXDescripcion">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getProductosXDescripcion" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductosXCodigo">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getProductosXCodigo" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductoXCodigo">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getProductoXCodigo" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductosXHistoria">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getProductosXHistoria" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="xmlGrabaCotizacion">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/xmlGrabaCotizacion" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="xmlGrabaPedido">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/xmlGrabaPedido" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="xmlCalculaPrecios">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/xmlCalculaPrecios" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="xmlObtieneDetallePedido">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/xmlObtieneDetallePedido" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="xmlListaPedidos">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/xmlListaPedidos" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="xmlObtieneStockMaterial">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/xmlObtieneStockMaterial" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="xmlObtieneParametrosSap">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/xmlObtieneParametrosSap" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="xmlObtieneEstadoPedido">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/xmlObtieneEstadoPedido" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="xmlObtieneEstadoReparto">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/xmlObtieneEstadoReparto" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="xmlObtieneDetalleEntrega">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/xmlObtieneDetalleEntrega" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaUsuarios">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/listaUsuarios" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaPrivilegios">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/listaPrivilegios" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDocumento">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/getDocumento" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneStockMaterial2">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtieneStockMaterial2" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabaCotizacionProdCalculados">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/grabaCotizacionProdCalculados" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabaCotizacionProdRezagados">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/grabaCotizacionProdRezagados" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabaPedido">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/grabaPedido" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculaPrecios">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/calculaPrecios" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testCola">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/testCola" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaestroCliente_SAP">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtieneMaestroCliente_SAP" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="esClienteEcatalogo">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/esClienteEcatalogo" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="defineMaestroCliente_ECAT">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/defineMaestroCliente_ECAT" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneCorrelativoCliente">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtieneCorrelativoCliente" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabaCorrelativoCliente">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/grabaCorrelativoCliente" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tipoCorrelativoCliente">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/tipoCorrelativoCliente" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="autenticaUsuario">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/autenticaUsuario" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaestroUsuario">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtieneMaestroUsuario" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="borraUsuario">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/borraUsuario" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="defineMaestroUsuario">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/defineMaestroUsuario" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneDireccionesDespacho">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtieneDireccionesDespacho" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneDespacharPor">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtieneDespacharPor" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="esClasificacionABCSinRecargoDespacho">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/esClasificacionABCSinRecargoDespacho" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtienePrivilegiosUsuario">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtienePrivilegiosUsuario" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="definePrivilegioUsuario">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/definePrivilegioUsuario" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="borraPrivilegioUsuario">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/borraPrivilegioUsuario" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneIdCanasta">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtieneIdCanasta" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="marcaCanastaCotizada">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/marcaCanastaCotizada" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabaCanasta">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/grabaCanasta" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabaCanastaV2">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/grabaCanastaV2" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneCanasta">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtieneCanasta" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabaDestinatarioMercanciaPorDefecto">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/grabaDestinatarioMercanciaPorDefecto" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabaDespacharPorPorDefecto">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/grabaDespacharPorPorDefecto" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtienePlazosPagoEspecialesCliente">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtienePlazosPagoEspecialesCliente" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="esDiaHabil">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/esDiaHabil" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="agregaFavoritos">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/agregaFavoritos" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminaFavoritos">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/eliminaFavoritos" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneFavoritos">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtieneFavoritos" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneCategorias">
+      <soap12:operation soapAction="http://ecatalogo.gms.cl/ecatSrv/obtieneCategorias" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="eCatSrv">
+    <wsdl:port name="eCatSrvSoap" binding="tns:eCatSrvSoap">
+      <soap:address location="http://ws.ecatalogo.gms.cl/ecatsrv.asmx" />
+    </wsdl:port>
+    <wsdl:port name="eCatSrvSoap12" binding="tns:eCatSrvSoap12">
+      <soap12:address location="http://ws.ecatalogo.gms.cl/ecatsrv.asmx" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

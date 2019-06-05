@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://ws.ecatalogo.gms.cl/ecatsrv.asmx?wsdl" filename="ecatsrv.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://ws.ecatalogo.gms.cl/ecatsrv.asmx?disco" filename="ecatsrv.disco" />
+  </Results>
+</DiscoveryClientResultsFile>

@@ -1,0 +1,216 @@
+.cpYearNavigation
+{
+	font-weight: bold;
+	font-size: 8pt;
+	color: #ffffff;
+	font-family: arial;
+	background-color: black;
+	text-align: center;
+	text-decoration: none;
+}
+
+.cpMonthNavigation 
+{
+	 FONT-WEIGHT: bold; 
+	 COLOR: #ffffff; 
+	 BACKGROUND-COLOR: SteelBlue; 
+	 TEXT-ALIGN: center; 
+	 TEXT-DECORATION: none ;
+	 FONT-SIZE: 8pt; 
+	 FONT-FAMILY: arial;
+	 height : 16px;
+	 text-decoration:none;
+}
+	A.cpMonthNavigation:link
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+	A.cpMonthNavigation:active {
+		COLOR: #ffffff; TEXT-DECORATION: none
+	}
+	A.cpMonthNavigation:visited {
+		COLOR: #ffffff; TEXT-DECORATION: none; 
+	}
+
+	TD.cpDayColumnHeader 
+	{
+		 BORDER-RIGHT: #EEEEEE 1px solid; 
+		 BORDER-TOP: #EEEEEE 1px solid; 
+		 BORDER-LEFT: #EEEEEE 1px solid; 
+		 BORDER-BOTTOM: #EEEEEE 1px solid; 
+		 TEXT-ALIGN: center ;
+		 background-color:LightSteelBlue;
+		 width : 16px
+	}
+	.cpDayColumnHeader { FONT-SIZE: 8pt; FONT-FAMILY: arial ;	 background-color:LightSteelBlue}
+.cpCurrentMonthDate
+{
+	font-size: 8pt;
+	font-family: Verdana, Arial ;
+	font-weight: bold;
+	color: #6677dd;
+	text-align: right;
+	text-decoration: none;
+	background-color:AliceBlue
+}
+A.cpCurrentMonthDate:link
+{
+	color: black;
+	font-weight:normal ;
+background-color:AliceBlue
+}
+A.cpCurrentMonthDate:visited
+{
+	color: black;
+	font-weight:normal ;
+background-color:AliceBlue
+}
+A.cpCurrentMonthDate:hover
+{
+	color: black;
+	font-weight:normal ;
+	background-color:AliceBlue
+}
+
+	.cpCurrentMonthDateDisabled { FONT-SIZE: 8pt; FONT-FAMILY: arial }
+	.cpOtherMonthDateDisabled { FONT-SIZE: 8pt; FONT-FAMILY: arial }
+	.cpCurrentDateDisabled { FONT-SIZE: 8pt; FONT-FAMILY: arial }
+	.cpTodayText { FONT-SIZE: 8pt; FONT-FAMILY: arial; text-decoration:none;	}
+	.cpTodayTextDisabled { FONT-SIZE: 8pt; FONT-FAMILY: arial }
+	
+	.cpText 
+	{
+		color:Navy ;
+		FONT-SIZE: 8pt; 
+		FONT-FAMILY: arial ;
+		background-color:White ;
+		text-decoration:none;	
+	}
+	A.cpText:link {
+		COLOR: black; TEXT-DECORATION: none
+	}
+	A.cpText:visited {
+		COLOR: black; TEXT-DECORATION: none
+	}
+	A.cpText:active {
+		COLOR: black; TEXT-DECORATION: none
+	}
+	
+
+.cpOtherMonthDate
+{
+
+	color: #999999;
+	font-family: Verdana, Arial ;
+	text-align: right;
+	font-weight:normal ;
+	background-color:AliceBlue
+}		
+A.cpOtherMonthDate:link
+{
+
+	color: #999999;
+	font-family: Verdana, Arial ;
+	text-align: right;
+	font-weight:normal ;
+	background-color:AliceBlue
+}
+A.cpOtherMonthDate:visited
+{
+
+	color: #999999;
+	font-family: Verdana, Arial ;
+	text-align: right;
+	font-weight:normal ;
+	background-color:AliceBlue
+}
+A.cpOtherMonthDate:hover
+{
+
+	color: #999999;
+	font-family: Verdana, Arial ;
+	text-align: right;
+	font-weight:normal ;
+	background-color:AliceBlue
+}
+	 
+	.cpCurrentDate
+{
+	FONT-SIZE: 8pt; 
+	font-family: Verdana, Arial ;
+	color: #ffffff;
+	text-align: right;
+	text-decoration: none;
+}
+	TD.cpCurrentDate
+{
+	border-right: gray 1px solid;
+	border-top: gray 1px solid;
+	border-left: gray 1px solid;
+	border-bottom: gray 1px solid;
+	color: #ffffff;
+	background-color: yellow;
+}	
+	A.cpCurrentDate:link
+{
+	color: black;
+	text-decoration: none;
+	font-family: Verdana, Arial ;
+	font-weight:bold 
+}
+A.cpCurrentDate:active
+{
+	color: black;
+	text-decoration: none;
+	font-family: Verdana, Arial ;
+	font-weight:bold 
+}
+A.cpCurrentDate:visited
+{
+	color: black;
+	text-decoration: none;
+	font-family: Verdana, Arial ;
+	font-weight:bold 
+}
+	.cpCurrentMonthDateDisabled { COLOR: #d0d0d0; TEXT-ALIGN: right; TEXT-DECORATION: line-through }
+	.cpOtherMonthDateDisabled { COLOR: #d0d0d0; TEXT-ALIGN: right; TEXT-DECORATION: line-through }
+	.cpCurrentDateDisabled { COLOR: #d0d0d0; TEXT-ALIGN: right; TEXT-DECORATION: line-through }
+	TD.cpCurrentDateDisabled { BORDER-RIGHT: #ffaaaa thin solid; BORDER-TOP: #ffaaaa thin solid; BORDER-LEFT: #ffaaaa thin solid; BORDER-BOTTOM: #ffaaaa thin solid }
+	TD.cpTodayText
+{
+	border-right: #6677dd 0px solid;
+	border-top: #6677dd 1px solid;
+	border-left: #6677dd 0px solid;
+	border-bottom: #6677dd 0px solid;
+}
+	A.cpTodayText:link
+{
+	COLOR: White;
+}
+	A.cpTodayText:visited 
+{
+	COLOR: White; 
+}	
+	A.cpTodayText:active 
+{
+	COLOR: White; 
+}	
+	A.cpTodayText:hover
+{
+	COLOR: White; 
+	font-weight:bold 
+}	
+	TD.cpTodayTextDisabled { BORDER-RIGHT: #6677dd 0px solid; BORDER-TOP: #6677dd 1px solid; BORDER-LEFT: #6677dd 0px solid; BORDER-BOTTOM: #6677dd 0px solid }
+	SPAN.cpTodayTextDisabled { HEIGHT: 20px ; COLOR: #d0d0d0}
+	A.cpTodayTextDisabled {
+		COLOR: black; TEXT-DECORATION: none
+	}
+.cpBorder
+{
+	border-right: black 1px solid;
+	border-top: black 1px solid;
+	border-left: black 1px solid;
+	border-bottom: black 1px solid;
+	background-color: steelblue;
+}

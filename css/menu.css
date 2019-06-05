@@ -1,0 +1,73 @@
+ .clCMEvent { LEFT: 0px; VISIBILITY: visible; WIDTH: 99%; CLIP: rect(0px 100% 100% 0px); POSITION: absolute; TOP: 0px; HEIGHT: 99% }
+ .clCMAbs { LEFT: 0px; VISIBILITY: hidden; POSITION: absolute; TOP: 0px }
+ .clBar { VISIBILITY: hidden; WIDTH: 10px; POSITION: absolute; HEIGHT: 10px; BACKGROUND-COLOR: navy; layer-background-color: Navy }
+ .clLevel0 
+ {
+	background-color:white ; 
+	padding: 2px 0px 0px 2px;
+	FONT-WEIGHT: normal; 
+	FONT-SIZE: 11px; 
+	COLOR: #666666; 
+	FONT-FAMILY: Arial,helvetica; 
+	POSITION: absolute;
+	text-align: left;
+}
+ .clLevel0over 
+ {
+	 cursor: hand; 
+	 color: black; 
+	 padding: 2px 0px 0px 2px;
+	 BACKGROUND-COLOR: white; 
+	 FONT-WEIGHT: normal; 
+	 FONT-SIZE: 11px; 
+	 COLOR: #666666; 
+	 FONT-FAMILY:Arial,helvetica; 
+	 POSITION: absolute ;
+	 border-color: Black;
+	 text-align: left;
+}
+ .clLevel0border
+{
+	z-index: 550;
+	border-left-color: #1965a7;
+	visibility: hidden;
+	border-bottom-color: #1965a7;
+	border-top-color: #1965a7;
+	position: absolute;
+	background-color: #1965a7;
+	border-right-color: #1965a7;
+}
+ .clLevel1 
+ {
+	COLOR: black; 
+	BACKGROUND-COLOR: white; 
+	FONT-WEIGHT: normal; 
+	FONT-SIZE: 10px; 
+	COLOR: #666666; 
+	FONT-FAMILY: tahoma,geneva,arial,helvetica; 
+	POSITION: absolute ;
+	padding: 2px 0px 0px 4px;
+}
+ .clLevel1over 
+ {
+	CURSOR: hand; 
+	BACKGROUND-COLOR: #336699; 
+	FONT-WEIGHT: normal; 
+	FONT-SIZE: 10px; 
+	COLOR: white; 
+	FONT-FAMILY: tahoma,geneva,arial,helvetica; 
+	POSITION: absolute ;
+	padding: 2px 0px 0px 4px;
+}
+ .clLevel1border 
+ {
+	Z-INDEX: 500; 
+	VISIBILITY: hidden; 
+	POSITION: absolute; 
+	BACKGROUND-COLOR: #006699; 
+	layer-background-color: #006699 
+}
+	
+ .clLevel2 { COLOR: white; BACKGROUND-COLOR: navy; layer-background-color: Navy }
+ .clLevel2over { CURSOR: hand; COLOR: yellow; BACKGROUND-COLOR: #0099cc; layer-background-color: #0099cc }
+ .clLevel2border { VISIBILITY: hidden; POSITION: absolute; BACKGROUND-COLOR: #006699; layer-background-color: #006699 }

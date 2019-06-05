@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://ws.andes.gms.cl/OrgSrv.asmx?wsdl" docRef="http://ws.andes.gms.cl/OrgSrv.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://ws.andes.gms.cl/OrgSrv.asmx" xmlns:q1="http://tempuri.org/wsAndes/OrgSrv" binding="q1:OrgSrvSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://ws.andes.gms.cl/OrgSrv.asmx" xmlns:q2="http://tempuri.org/wsAndes/OrgSrv" binding="q2:OrgSrvSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

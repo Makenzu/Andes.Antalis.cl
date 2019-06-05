@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://ws.ecatalogo.gms.cl/ecatsrv.asmx?wsdl" docRef="http://ws.ecatalogo.gms.cl/ecatsrv.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://ws.ecatalogo.gms.cl/ecatsrv.asmx" xmlns:q1="http://ecatalogo.gms.cl/ecatSrv" binding="q1:eCatSrvSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://ws.ecatalogo.gms.cl/ecatsrv.asmx" xmlns:q2="http://ecatalogo.gms.cl/ecatSrv" binding="q2:eCatSrvSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="dummy1">
+        <s:complexType />
+      </s:element>
+      <s:element name="dummy1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dummy1Result" type="tns:stRegistroMaquina" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="stRegistroMaquina">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idRegistro" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombreCliente" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="idMaquina" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="dmcMaquina" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="idTamanhoMaquina" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="dmcTamanhoMaquina" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cantidadMaquinas" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="numCuerposImpresores" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="conTorreBarniz" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="idTamanhoPlancha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dmcTamanhoPlancha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idTamanhoMantilla" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dmcTamanhoMantilla" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="observaciones" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="consumoPapel" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="consumoPlanchas" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="consumoTintasProceso" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="consumoTintasPantone" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="consumoBarniz" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="consumoMantillas" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="fechaRegistro" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="fechaModificacion" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="obtieneRegistroMaquinasClientes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneRegistroMaquinasClientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneRegistroMaquinasClientesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneMaquinas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneMaquinasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneMaquinasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneTamanhoMaquinas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idMaquina" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneTamanhoMaquinasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneTamanhoMaquinasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneTamanhosPlanchas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoMaquina" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneTamanhosPlanchasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneTamanhosPlanchasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneTamanhosMantillas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoMaquina" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneTamanhosMantillasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneTamanhosMantillasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ingresaNuevoRegistroMaquinaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="registro" type="tns:stRegistroMaquina" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ingresaNuevoRegistroMaquinaClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ingresaNuevoRegistroMaquinaClienteResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizaRegistroMaquinaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="registro" type="tns:stRegistroMaquina" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizaRegistroMaquinaClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="actualizaRegistroMaquinaClienteResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminaRegistroMaquinaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idRegistro" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminaRegistroMaquinaClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminaRegistroMaquinaClienteResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneRegistroMaquinaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idRegistro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneRegistroMaquinaClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneRegistroMaquinaClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneMaquinasPorCartera">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codEjecutivo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneMaquinasPorCarteraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneMaquinasPorCarteraResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneClientesPorMaquina">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idMaquina" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneClientesPorMaquinaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneClientesPorMaquinaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="dummy1SoapIn">
+    <wsdl:part name="parameters" element="tns:dummy1" />
+  </wsdl:message>
+  <wsdl:message name="dummy1SoapOut">
+    <wsdl:part name="parameters" element="tns:dummy1Response" />
+  </wsdl:message>
+  <wsdl:message name="obtieneRegistroMaquinasClientesSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneRegistroMaquinasClientes" />
+  </wsdl:message>
+  <wsdl:message name="obtieneRegistroMaquinasClientesSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneRegistroMaquinasClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneMaquinasSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneMaquinas" />
+  </wsdl:message>
+  <wsdl:message name="obtieneMaquinasSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneMaquinasResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneTamanhoMaquinasSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneTamanhoMaquinas" />
+  </wsdl:message>
+  <wsdl:message name="obtieneTamanhoMaquinasSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneTamanhoMaquinasResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneTamanhosPlanchasSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneTamanhosPlanchas" />
+  </wsdl:message>
+  <wsdl:message name="obtieneTamanhosPlanchasSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneTamanhosPlanchasResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneTamanhosMantillasSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneTamanhosMantillas" />
+  </wsdl:message>
+  <wsdl:message name="obtieneTamanhosMantillasSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneTamanhosMantillasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ingresaNuevoRegistroMaquinaClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ingresaNuevoRegistroMaquinaCliente" />
+  </wsdl:message>
+  <wsdl:message name="ingresaNuevoRegistroMaquinaClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ingresaNuevoRegistroMaquinaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizaRegistroMaquinaClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizaRegistroMaquinaCliente" />
+  </wsdl:message>
+  <wsdl:message name="actualizaRegistroMaquinaClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizaRegistroMaquinaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminaRegistroMaquinaClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminaRegistroMaquinaCliente" />
+  </wsdl:message>
+  <wsdl:message name="eliminaRegistroMaquinaClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminaRegistroMaquinaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneRegistroMaquinaClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneRegistroMaquinaCliente" />
+  </wsdl:message>
+  <wsdl:message name="obtieneRegistroMaquinaClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneRegistroMaquinaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneMaquinasPorCarteraSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneMaquinasPorCartera" />
+  </wsdl:message>
+  <wsdl:message name="obtieneMaquinasPorCarteraSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneMaquinasPorCarteraResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneClientesPorMaquinaSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneClientesPorMaquina" />
+  </wsdl:message>
+  <wsdl:message name="obtieneClientesPorMaquinaSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneClientesPorMaquinaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="catastroMaquinasSrvSoap">
+    <wsdl:operation name="dummy1">
+      <wsdl:input message="tns:dummy1SoapIn" />
+      <wsdl:output message="tns:dummy1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneRegistroMaquinasClientes">
+      <wsdl:input message="tns:obtieneRegistroMaquinasClientesSoapIn" />
+      <wsdl:output message="tns:obtieneRegistroMaquinasClientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaquinas">
+      <wsdl:input message="tns:obtieneMaquinasSoapIn" />
+      <wsdl:output message="tns:obtieneMaquinasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneTamanhoMaquinas">
+      <wsdl:input message="tns:obtieneTamanhoMaquinasSoapIn" />
+      <wsdl:output message="tns:obtieneTamanhoMaquinasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneTamanhosPlanchas">
+      <wsdl:input message="tns:obtieneTamanhosPlanchasSoapIn" />
+      <wsdl:output message="tns:obtieneTamanhosPlanchasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneTamanhosMantillas">
+      <wsdl:input message="tns:obtieneTamanhosMantillasSoapIn" />
+      <wsdl:output message="tns:obtieneTamanhosMantillasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ingresaNuevoRegistroMaquinaCliente">
+      <wsdl:input message="tns:ingresaNuevoRegistroMaquinaClienteSoapIn" />
+      <wsdl:output message="tns:ingresaNuevoRegistroMaquinaClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizaRegistroMaquinaCliente">
+      <wsdl:input message="tns:actualizaRegistroMaquinaClienteSoapIn" />
+      <wsdl:output message="tns:actualizaRegistroMaquinaClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminaRegistroMaquinaCliente">
+      <wsdl:input message="tns:eliminaRegistroMaquinaClienteSoapIn" />
+      <wsdl:output message="tns:eliminaRegistroMaquinaClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneRegistroMaquinaCliente">
+      <wsdl:input message="tns:obtieneRegistroMaquinaClienteSoapIn" />
+      <wsdl:output message="tns:obtieneRegistroMaquinaClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaquinasPorCartera">
+      <wsdl:input message="tns:obtieneMaquinasPorCarteraSoapIn" />
+      <wsdl:output message="tns:obtieneMaquinasPorCarteraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneClientesPorMaquina">
+      <wsdl:input message="tns:obtieneClientesPorMaquinaSoapIn" />
+      <wsdl:output message="tns:obtieneClientesPorMaquinaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="catastroMaquinasSrvSoap" type="tns:catastroMaquinasSrvSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="dummy1">
+      <soap:operation soapAction="http://tempuri.org/dummy1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneRegistroMaquinasClientes">
+      <soap:operation soapAction="http://tempuri.org/obtieneRegistroMaquinasClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaquinas">
+      <soap:operation soapAction="http://tempuri.org/obtieneMaquinas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneTamanhoMaquinas">
+      <soap:operation soapAction="http://tempuri.org/obtieneTamanhoMaquinas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneTamanhosPlanchas">
+      <soap:operation soapAction="http://tempuri.org/obtieneTamanhosPlanchas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneTamanhosMantillas">
+      <soap:operation soapAction="http://tempuri.org/obtieneTamanhosMantillas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ingresaNuevoRegistroMaquinaCliente">
+      <soap:operation soapAction="http://tempuri.org/ingresaNuevoRegistroMaquinaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizaRegistroMaquinaCliente">
+      <soap:operation soapAction="http://tempuri.org/actualizaRegistroMaquinaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminaRegistroMaquinaCliente">
+      <soap:operation soapAction="http://tempuri.org/eliminaRegistroMaquinaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneRegistroMaquinaCliente">
+      <soap:operation soapAction="http://tempuri.org/obtieneRegistroMaquinaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaquinasPorCartera">
+      <soap:operation soapAction="http://tempuri.org/obtieneMaquinasPorCartera" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneClientesPorMaquina">
+      <soap:operation soapAction="http://tempuri.org/obtieneClientesPorMaquina" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="catastroMaquinasSrvSoap12" type="tns:catastroMaquinasSrvSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+    <wsdl:operation name="dummy1">
+      <soap12:operation soapAction="http://tempuri.org/dummy1" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneRegistroMaquinasClientes">
+      <soap12:operation soapAction="http://tempuri.org/obtieneRegistroMaquinasClientes" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaquinas">
+      <soap12:operation soapAction="http://tempuri.org/obtieneMaquinas" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneTamanhoMaquinas">
+      <soap12:operation soapAction="http://tempuri.org/obtieneTamanhoMaquinas" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneTamanhosPlanchas">
+      <soap12:operation soapAction="http://tempuri.org/obtieneTamanhosPlanchas" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneTamanhosMantillas">
+      <soap12:operation soapAction="http://tempuri.org/obtieneTamanhosMantillas" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ingresaNuevoRegistroMaquinaCliente">
+      <soap12:operation soapAction="http://tempuri.org/ingresaNuevoRegistroMaquinaCliente" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizaRegistroMaquinaCliente">
+      <soap12:operation soapAction="http://tempuri.org/actualizaRegistroMaquinaCliente" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminaRegistroMaquinaCliente">
+      <soap12:operation soapAction="http://tempuri.org/eliminaRegistroMaquinaCliente" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneRegistroMaquinaCliente">
+      <soap12:operation soapAction="http://tempuri.org/obtieneRegistroMaquinaCliente" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaquinasPorCartera">
+      <soap12:operation soapAction="http://tempuri.org/obtieneMaquinasPorCartera" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneClientesPorMaquina">
+      <soap12:operation soapAction="http://tempuri.org/obtieneClientesPorMaquina" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="catastroMaquinasSrv">
+    <wsdl:port name="catastroMaquinasSrvSoap" binding="tns:catastroMaquinasSrvSoap">
+      <soap:address location="http://pruebas.ws.andes.gms.cl/catastroMaquinasSrv.asmx" />
+    </wsdl:port>
+    <wsdl:port name="catastroMaquinasSrvSoap12" binding="tns:catastroMaquinasSrvSoap12">
+      <soap12:address location="http://pruebas.ws.andes.gms.cl/catastroMaquinasSrv.asmx" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

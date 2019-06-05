@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/wsAndes/materialesSrv" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/wsAndes/materialesSrv" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/wsAndes/materialesSrv">
+      <s:element name="obtieneAreas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneAreasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneAreasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneFamilias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoArea" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneFamiliasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneFamiliasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneSubFamilias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFamilia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneSubFamiliasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneSubFamiliasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneMateriales">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFamilia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSubfamilia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneMaterialesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneMaterialesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneMaterial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoProducto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneMaterialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneMaterialResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneInfoJerarquiaMaterial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSubfamilia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneInfoJerarquiaMaterialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="obtieneInfoJerarquiaMaterialResult" type="tns:stJerarquiaMaterial" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="stJerarquiaMaterial">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="area" type="tns:stArea" />
+          <s:element minOccurs="1" maxOccurs="1" name="familia" type="tns:stFamilia" />
+          <s:element minOccurs="1" maxOccurs="1" name="subfamilia" type="tns:stSubfamilia" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stArea">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="denominacion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stFamilia">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="denominacion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stSubfamilia">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="denominacion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="obtieneEncargadosSubfamilias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneEncargadosSubfamiliasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneEncargadosSubfamiliasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneProveedores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneProveedoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneProveedoresResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneProveedoresPorJerarquia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFamilia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSubfamilia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneProveedoresPorJerarquiaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneProveedoresPorJerarquiaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneMaterialesPorJerarquiaProveedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFamilia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSubfamilia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoProveedor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneMaterialesPorJerarquiaProveedorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneMaterialesPorJerarquiaProveedorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneMaterialesPorProveedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoProveedor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneMaterialesPorProveedorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneMaterialesPorProveedorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneAreasProdManager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prodManager" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneAreasProdManagerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneAreasProdManagerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneFamiliasProdManager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prodManager" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneFamiliasProdManagerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneFamiliasProdManagerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneSubFamiliasProdManager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFamilia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prodManager" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneSubFamiliasProdManagerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneSubFamiliasProdManagerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="obtieneAreasSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneAreas" />
+  </wsdl:message>
+  <wsdl:message name="obtieneAreasSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneFamiliasSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneFamilias" />
+  </wsdl:message>
+  <wsdl:message name="obtieneFamiliasSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneFamiliasResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneSubFamiliasSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneSubFamilias" />
+  </wsdl:message>
+  <wsdl:message name="obtieneSubFamiliasSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneSubFamiliasResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneMaterialesSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneMateriales" />
+  </wsdl:message>
+  <wsdl:message name="obtieneMaterialesSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneMaterialesResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneMaterialSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneMaterial" />
+  </wsdl:message>
+  <wsdl:message name="obtieneMaterialSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneInfoJerarquiaMaterialSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneInfoJerarquiaMaterial" />
+  </wsdl:message>
+  <wsdl:message name="obtieneInfoJerarquiaMaterialSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneInfoJerarquiaMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneEncargadosSubfamiliasSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneEncargadosSubfamilias" />
+  </wsdl:message>
+  <wsdl:message name="obtieneEncargadosSubfamiliasSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneEncargadosSubfamiliasResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneProveedoresSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneProveedores" />
+  </wsdl:message>
+  <wsdl:message name="obtieneProveedoresSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneProveedoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneProveedoresPorJerarquiaSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneProveedoresPorJerarquia" />
+  </wsdl:message>
+  <wsdl:message name="obtieneProveedoresPorJerarquiaSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneProveedoresPorJerarquiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneMaterialesPorJerarquiaProveedorSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneMaterialesPorJerarquiaProveedor" />
+  </wsdl:message>
+  <wsdl:message name="obtieneMaterialesPorJerarquiaProveedorSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneMaterialesPorJerarquiaProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneMaterialesPorProveedorSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneMaterialesPorProveedor" />
+  </wsdl:message>
+  <wsdl:message name="obtieneMaterialesPorProveedorSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneMaterialesPorProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneAreasProdManagerSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneAreasProdManager" />
+  </wsdl:message>
+  <wsdl:message name="obtieneAreasProdManagerSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneAreasProdManagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneFamiliasProdManagerSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneFamiliasProdManager" />
+  </wsdl:message>
+  <wsdl:message name="obtieneFamiliasProdManagerSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneFamiliasProdManagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneSubFamiliasProdManagerSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneSubFamiliasProdManager" />
+  </wsdl:message>
+  <wsdl:message name="obtieneSubFamiliasProdManagerSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneSubFamiliasProdManagerResponse" />
+  </wsdl:message>
+  <wsdl:portType name="materialesSrvSoap">
+    <wsdl:operation name="obtieneAreas">
+      <wsdl:input message="tns:obtieneAreasSoapIn" />
+      <wsdl:output message="tns:obtieneAreasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneFamilias">
+      <wsdl:input message="tns:obtieneFamiliasSoapIn" />
+      <wsdl:output message="tns:obtieneFamiliasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneSubFamilias">
+      <wsdl:input message="tns:obtieneSubFamiliasSoapIn" />
+      <wsdl:output message="tns:obtieneSubFamiliasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMateriales">
+      <wsdl:input message="tns:obtieneMaterialesSoapIn" />
+      <wsdl:output message="tns:obtieneMaterialesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaterial">
+      <wsdl:input message="tns:obtieneMaterialSoapIn" />
+      <wsdl:output message="tns:obtieneMaterialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneInfoJerarquiaMaterial">
+      <wsdl:input message="tns:obtieneInfoJerarquiaMaterialSoapIn" />
+      <wsdl:output message="tns:obtieneInfoJerarquiaMaterialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneEncargadosSubfamilias">
+      <wsdl:input message="tns:obtieneEncargadosSubfamiliasSoapIn" />
+      <wsdl:output message="tns:obtieneEncargadosSubfamiliasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneProveedores">
+      <wsdl:input message="tns:obtieneProveedoresSoapIn" />
+      <wsdl:output message="tns:obtieneProveedoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneProveedoresPorJerarquia">
+      <wsdl:input message="tns:obtieneProveedoresPorJerarquiaSoapIn" />
+      <wsdl:output message="tns:obtieneProveedoresPorJerarquiaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaterialesPorJerarquiaProveedor">
+      <wsdl:input message="tns:obtieneMaterialesPorJerarquiaProveedorSoapIn" />
+      <wsdl:output message="tns:obtieneMaterialesPorJerarquiaProveedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaterialesPorProveedor">
+      <wsdl:input message="tns:obtieneMaterialesPorProveedorSoapIn" />
+      <wsdl:output message="tns:obtieneMaterialesPorProveedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneAreasProdManager">
+      <wsdl:input message="tns:obtieneAreasProdManagerSoapIn" />
+      <wsdl:output message="tns:obtieneAreasProdManagerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneFamiliasProdManager">
+      <wsdl:input message="tns:obtieneFamiliasProdManagerSoapIn" />
+      <wsdl:output message="tns:obtieneFamiliasProdManagerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneSubFamiliasProdManager">
+      <wsdl:input message="tns:obtieneSubFamiliasProdManagerSoapIn" />
+      <wsdl:output message="tns:obtieneSubFamiliasProdManagerSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="materialesSrvSoap" type="tns:materialesSrvSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="obtieneAreas">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneFamilias">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneFamilias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneSubFamilias">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneSubFamilias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMateriales">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneMateriales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaterial">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneInfoJerarquiaMaterial">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneInfoJerarquiaMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneEncargadosSubfamilias">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneEncargadosSubfamilias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneProveedores">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneProveedores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneProveedoresPorJerarquia">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneProveedoresPorJerarquia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaterialesPorJerarquiaProveedor">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneMaterialesPorJerarquiaProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaterialesPorProveedor">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneMaterialesPorProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneAreasProdManager">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneAreasProdManager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneFamiliasProdManager">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneFamiliasProdManager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneSubFamiliasProdManager">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneSubFamiliasProdManager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="materialesSrvSoap12" type="tns:materialesSrvSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+    <wsdl:operation name="obtieneAreas">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneAreas" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneFamilias">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneFamilias" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneSubFamilias">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneSubFamilias" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMateriales">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneMateriales" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaterial">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneMaterial" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneInfoJerarquiaMaterial">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneInfoJerarquiaMaterial" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneEncargadosSubfamilias">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneEncargadosSubfamilias" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneProveedores">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneProveedores" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneProveedoresPorJerarquia">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneProveedoresPorJerarquia" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaterialesPorJerarquiaProveedor">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneMaterialesPorJerarquiaProveedor" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneMaterialesPorProveedor">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneMaterialesPorProveedor" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneAreasProdManager">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneAreasProdManager" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneFamiliasProdManager">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneFamiliasProdManager" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneSubFamiliasProdManager">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/materialesSrv/obtieneSubFamiliasProdManager" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="materialesSrv">
+    <wsdl:port name="materialesSrvSoap" binding="tns:materialesSrvSoap">
+      <soap:address location="http://ws.andes.gms.cl/materialesSrv.asmx" />
+    </wsdl:port>
+    <wsdl:port name="materialesSrvSoap12" binding="tns:materialesSrvSoap12">
+      <soap12:address location="http://ws.andes.gms.cl/materialesSrv.asmx" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

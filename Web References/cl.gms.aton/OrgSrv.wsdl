@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/aton/orgSrv" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/aton/orgSrv" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/aton/orgSrv">
+      <s:import namespace="http://www.w3.org/2001/XMLSchema" />
+      <s:element name="listaDepartamentos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaDepartamentosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaDepartamentosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaFiliales">
+        <s:complexType />
+      </s:element>
+      <s:element name="listaFilialesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaFilialesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaSucursales">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaSucursalesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaSucursalesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaSociedades">
+        <s:complexType />
+      </s:element>
+      <s:element name="listaSociedadesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaSociedadesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaPromotoras">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaPromotorasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaPromotorasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="listaDepartamentosSoapIn">
+    <wsdl:part name="parameters" element="tns:listaDepartamentos" />
+  </wsdl:message>
+  <wsdl:message name="listaDepartamentosSoapOut">
+    <wsdl:part name="parameters" element="tns:listaDepartamentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="listaFilialesSoapIn">
+    <wsdl:part name="parameters" element="tns:listaFiliales" />
+  </wsdl:message>
+  <wsdl:message name="listaFilialesSoapOut">
+    <wsdl:part name="parameters" element="tns:listaFilialesResponse" />
+  </wsdl:message>
+  <wsdl:message name="listaSucursalesSoapIn">
+    <wsdl:part name="parameters" element="tns:listaSucursales" />
+  </wsdl:message>
+  <wsdl:message name="listaSucursalesSoapOut">
+    <wsdl:part name="parameters" element="tns:listaSucursalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="listaSociedadesSoapIn">
+    <wsdl:part name="parameters" element="tns:listaSociedades" />
+  </wsdl:message>
+  <wsdl:message name="listaSociedadesSoapOut">
+    <wsdl:part name="parameters" element="tns:listaSociedadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="listaPromotorasSoapIn">
+    <wsdl:part name="parameters" element="tns:listaPromotoras" />
+  </wsdl:message>
+  <wsdl:message name="listaPromotorasSoapOut">
+    <wsdl:part name="parameters" element="tns:listaPromotorasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="orgSrvSoap">
+    <wsdl:operation name="listaDepartamentos">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Permite obtener un listado de departamentos para una filial.</documentation>
+      <wsdl:input message="tns:listaDepartamentosSoapIn" />
+      <wsdl:output message="tns:listaDepartamentosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listaFiliales">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Permite obtener listado de filiales.</documentation>
+      <wsdl:input message="tns:listaFilialesSoapIn" />
+      <wsdl:output message="tns:listaFilialesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listaSucursales">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Permite obtener listado de sucursales para una filial. En caso que codigoFilial sea Nothing se retorna todo universo de sucursales vigentes.</documentation>
+      <wsdl:input message="tns:listaSucursalesSoapIn" />
+      <wsdl:output message="tns:listaSucursalesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listaSociedades">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Permite obtener listado de sociedades.</documentation>
+      <wsdl:input message="tns:listaSociedadesSoapIn" />
+      <wsdl:output message="tns:listaSociedadesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listaPromotoras">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Permite obtener listado de promotoras para la sociedad en consulta</documentation>
+      <wsdl:input message="tns:listaPromotorasSoapIn" />
+      <wsdl:output message="tns:listaPromotorasSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="orgSrvSoap" type="tns:orgSrvSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="listaDepartamentos">
+      <soap:operation soapAction="http://tempuri.org/aton/orgSrv/listaDepartamentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaFiliales">
+      <soap:operation soapAction="http://tempuri.org/aton/orgSrv/listaFiliales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaSucursales">
+      <soap:operation soapAction="http://tempuri.org/aton/orgSrv/listaSucursales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaSociedades">
+      <soap:operation soapAction="http://tempuri.org/aton/orgSrv/listaSociedades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaPromotoras">
+      <soap:operation soapAction="http://tempuri.org/aton/orgSrv/listaPromotoras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="orgSrv">
+    <wsdl:port name="orgSrvSoap" binding="tns:orgSrvSoap">
+      <soap:address location="http://aton.gms.cl/OrgSrv.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

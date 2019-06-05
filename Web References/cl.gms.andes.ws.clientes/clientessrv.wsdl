@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/wsAndes/Service1" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/wsAndes/Service1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/wsAndes/Service1">
+      <s:element name="obtieneMaestroCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="buscaEnMailing" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneMaestroClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="obtieneMaestroClienteResult" type="tns:stCliente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="stCliente">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoPromotora" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombrePromotora" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoCobrador" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombreCobrador" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoFormaPago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoPlazoPago" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="valTopeCredito" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="indicadorActivo" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="valDeuda" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="valPPPA" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="direccion" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoComuna" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombreComuna" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoCiudad" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombreCiudad" />
+          <s:element minOccurs="0" maxOccurs="1" name="telefono" />
+          <s:element minOccurs="0" maxOccurs="1" name="fax" />
+          <s:element minOccurs="0" maxOccurs="1" name="movil" />
+          <s:element minOccurs="0" maxOccurs="1" name="rutCliente" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoPais" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombrePais" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoRegion" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombreRegion" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listaClientesCarteraPromotora">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoPromotora" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaClientesCarteraPromotoraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaClientesCarteraPromotoraResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaClientesCarteraVirtual">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoVendedora" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaClientesCarteraVirtualResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaClientesCarteraVirtualResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneClientes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAgente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="razonSocial" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="buscaEnMailing" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneClientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneClientesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="obtieneMaestroClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneMaestroCliente" />
+  </wsdl:message>
+  <wsdl:message name="obtieneMaestroClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneMaestroClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="listaClientesCarteraPromotoraSoapIn">
+    <wsdl:part name="parameters" element="tns:listaClientesCarteraPromotora" />
+  </wsdl:message>
+  <wsdl:message name="listaClientesCarteraPromotoraSoapOut">
+    <wsdl:part name="parameters" element="tns:listaClientesCarteraPromotoraResponse" />
+  </wsdl:message>
+  <wsdl:message name="listaClientesCarteraVirtualSoapIn">
+    <wsdl:part name="parameters" element="tns:listaClientesCarteraVirtual" />
+  </wsdl:message>
+  <wsdl:message name="listaClientesCarteraVirtualSoapOut">
+    <wsdl:part name="parameters" element="tns:listaClientesCarteraVirtualResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneClientesSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneClientes" />
+  </wsdl:message>
+  <wsdl:message name="obtieneClientesSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneClientesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="clientesSrvSoap">
+    <wsdl:operation name="obtieneMaestroCliente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna información maestra del cliente.</wsdl:documentation>
+      <wsdl:input message="tns:obtieneMaestroClienteSoapIn" />
+      <wsdl:output message="tns:obtieneMaestroClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listaClientesCarteraPromotora">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna dominio de clientes para cartera de promotora.</wsdl:documentation>
+      <wsdl:input message="tns:listaClientesCarteraPromotoraSoapIn" />
+      <wsdl:output message="tns:listaClientesCarteraPromotoraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listaClientesCarteraVirtual">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna dominio de clientes para cartera virtual de vendedora.</wsdl:documentation>
+      <wsdl:input message="tns:listaClientesCarteraVirtualSoapIn" />
+      <wsdl:output message="tns:listaClientesCarteraVirtualSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneClientes">
+      <wsdl:input message="tns:obtieneClientesSoapIn" />
+      <wsdl:output message="tns:obtieneClientesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="clientesSrvSoap" type="tns:clientesSrvSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="obtieneMaestroCliente">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/Service1/obtieneMaestroCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaClientesCarteraPromotora">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/Service1/listaClientesCarteraPromotora" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaClientesCarteraVirtual">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/Service1/listaClientesCarteraVirtual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneClientes">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/Service1/obtieneClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="clientesSrvSoap12" type="tns:clientesSrvSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+    <wsdl:operation name="obtieneMaestroCliente">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/Service1/obtieneMaestroCliente" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaClientesCarteraPromotora">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/Service1/listaClientesCarteraPromotora" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaClientesCarteraVirtual">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/Service1/listaClientesCarteraVirtual" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneClientes">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/Service1/obtieneClientes" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="clientesSrv">
+    <wsdl:port name="clientesSrvSoap" binding="tns:clientesSrvSoap">
+      <soap:address location="http://ws.andes.gms.cl/clientessrv.asmx" />
+    </wsdl:port>
+    <wsdl:port name="clientesSrvSoap12" binding="tns:clientesSrvSoap12">
+      <soap12:address location="http://ws.andes.gms.cl/clientessrv.asmx" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

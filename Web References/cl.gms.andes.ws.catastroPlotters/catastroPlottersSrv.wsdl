@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="dummy1">
+        <s:complexType />
+      </s:element>
+      <s:element name="dummy1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dummy1Result" type="tns:stRegistroPlotter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="stRegistroPlotter">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idRegistro" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="idPlotter" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="dmcPlotter" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="idTipoTinta" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="obtieneRegistroPlottersClientes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneRegistroPlottersClientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneRegistroPlottersClientesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtienePlotters">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtienePlottersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtienePlottersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneTiposTintas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneTiposTintasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneTiposTintasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ingresaNuevoRegistroMaquinaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idPlotter" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idTipoTinta" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="observaciones" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ingresaNuevoRegistroMaquinaClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ingresaNuevoRegistroMaquinaClienteResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizaRegistroMaquinaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idRegistro" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idPlotter" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idTipoTinta" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="observaciones" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizaRegistroMaquinaClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="actualizaRegistroMaquinaClienteResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminaRegistroMaquinaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idRegistro" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminaRegistroMaquinaClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminaRegistroMaquinaClienteResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneRegistroMaquinaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idRegistro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneRegistroMaquinaClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneRegistroMaquinaClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="msgError" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="dummy1SoapIn">
+    <wsdl:part name="parameters" element="tns:dummy1" />
+  </wsdl:message>
+  <wsdl:message name="dummy1SoapOut">
+    <wsdl:part name="parameters" element="tns:dummy1Response" />
+  </wsdl:message>
+  <wsdl:message name="obtieneRegistroPlottersClientesSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneRegistroPlottersClientes" />
+  </wsdl:message>
+  <wsdl:message name="obtieneRegistroPlottersClientesSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneRegistroPlottersClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtienePlottersSoapIn">
+    <wsdl:part name="parameters" element="tns:obtienePlotters" />
+  </wsdl:message>
+  <wsdl:message name="obtienePlottersSoapOut">
+    <wsdl:part name="parameters" element="tns:obtienePlottersResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneTiposTintasSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneTiposTintas" />
+  </wsdl:message>
+  <wsdl:message name="obtieneTiposTintasSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneTiposTintasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ingresaNuevoRegistroMaquinaClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ingresaNuevoRegistroMaquinaCliente" />
+  </wsdl:message>
+  <wsdl:message name="ingresaNuevoRegistroMaquinaClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ingresaNuevoRegistroMaquinaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizaRegistroMaquinaClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizaRegistroMaquinaCliente" />
+  </wsdl:message>
+  <wsdl:message name="actualizaRegistroMaquinaClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizaRegistroMaquinaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminaRegistroMaquinaClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminaRegistroMaquinaCliente" />
+  </wsdl:message>
+  <wsdl:message name="eliminaRegistroMaquinaClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminaRegistroMaquinaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneRegistroMaquinaClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneRegistroMaquinaCliente" />
+  </wsdl:message>
+  <wsdl:message name="obtieneRegistroMaquinaClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneRegistroMaquinaClienteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="catastroPlottersSrvSoap">
+    <wsdl:operation name="dummy1">
+      <wsdl:input message="tns:dummy1SoapIn" />
+      <wsdl:output message="tns:dummy1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneRegistroPlottersClientes">
+      <wsdl:input message="tns:obtieneRegistroPlottersClientesSoapIn" />
+      <wsdl:output message="tns:obtieneRegistroPlottersClientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtienePlotters">
+      <wsdl:input message="tns:obtienePlottersSoapIn" />
+      <wsdl:output message="tns:obtienePlottersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneTiposTintas">
+      <wsdl:input message="tns:obtieneTiposTintasSoapIn" />
+      <wsdl:output message="tns:obtieneTiposTintasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ingresaNuevoRegistroMaquinaCliente">
+      <wsdl:input message="tns:ingresaNuevoRegistroMaquinaClienteSoapIn" />
+      <wsdl:output message="tns:ingresaNuevoRegistroMaquinaClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizaRegistroMaquinaCliente">
+      <wsdl:input message="tns:actualizaRegistroMaquinaClienteSoapIn" />
+      <wsdl:output message="tns:actualizaRegistroMaquinaClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminaRegistroMaquinaCliente">
+      <wsdl:input message="tns:eliminaRegistroMaquinaClienteSoapIn" />
+      <wsdl:output message="tns:eliminaRegistroMaquinaClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneRegistroMaquinaCliente">
+      <wsdl:input message="tns:obtieneRegistroMaquinaClienteSoapIn" />
+      <wsdl:output message="tns:obtieneRegistroMaquinaClienteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="catastroPlottersSrvSoap" type="tns:catastroPlottersSrvSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="dummy1">
+      <soap:operation soapAction="http://tempuri.org/dummy1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneRegistroPlottersClientes">
+      <soap:operation soapAction="http://tempuri.org/obtieneRegistroPlottersClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtienePlotters">
+      <soap:operation soapAction="http://tempuri.org/obtienePlotters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneTiposTintas">
+      <soap:operation soapAction="http://tempuri.org/obtieneTiposTintas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ingresaNuevoRegistroMaquinaCliente">
+      <soap:operation soapAction="http://tempuri.org/ingresaNuevoRegistroMaquinaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizaRegistroMaquinaCliente">
+      <soap:operation soapAction="http://tempuri.org/actualizaRegistroMaquinaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminaRegistroMaquinaCliente">
+      <soap:operation soapAction="http://tempuri.org/eliminaRegistroMaquinaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneRegistroMaquinaCliente">
+      <soap:operation soapAction="http://tempuri.org/obtieneRegistroMaquinaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="catastroPlottersSrvSoap12" type="tns:catastroPlottersSrvSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+    <wsdl:operation name="dummy1">
+      <soap12:operation soapAction="http://tempuri.org/dummy1" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneRegistroPlottersClientes">
+      <soap12:operation soapAction="http://tempuri.org/obtieneRegistroPlottersClientes" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtienePlotters">
+      <soap12:operation soapAction="http://tempuri.org/obtienePlotters" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneTiposTintas">
+      <soap12:operation soapAction="http://tempuri.org/obtieneTiposTintas" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ingresaNuevoRegistroMaquinaCliente">
+      <soap12:operation soapAction="http://tempuri.org/ingresaNuevoRegistroMaquinaCliente" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizaRegistroMaquinaCliente">
+      <soap12:operation soapAction="http://tempuri.org/actualizaRegistroMaquinaCliente" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminaRegistroMaquinaCliente">
+      <soap12:operation soapAction="http://tempuri.org/eliminaRegistroMaquinaCliente" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneRegistroMaquinaCliente">
+      <soap12:operation soapAction="http://tempuri.org/obtieneRegistroMaquinaCliente" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="catastroPlottersSrv">
+    <wsdl:port name="catastroPlottersSrvSoap" binding="tns:catastroPlottersSrvSoap">
+      <soap:address location="http://pruebas.ws.andes.gms.cl/catastroPlottersSrv.asmx" />
+    </wsdl:port>
+    <wsdl:port name="catastroPlottersSrvSoap12" binding="tns:catastroPlottersSrvSoap12">
+      <soap12:address location="http://pruebas.ws.andes.gms.cl/catastroPlottersSrv.asmx" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

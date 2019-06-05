@@ -1,0 +1,1938 @@
+/* Default CSS Stylesheet for a new Web Application project */
+BODY
+{
+    BACKGROUND-COLOR: white;
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    FONT-SIZE: 10px;
+    FONT-WEIGHT: normal;
+    LETTER-SPACING: normal;
+    TEXT-TRANSFORM: none;
+    WORD-SPACING: normal;
+        
+}
+
+H1, H2, H3, H4, H5, TH, THEAD, TFOOT
+{
+    COLOR: #003366;
+}
+H1	{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	2em;
+	font-weight:	700;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+
+TFOOT, THEAD	{	
+	font-size:	1em;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	font-family: Arial, Helvetica, sans-serif;
+	}	
+		
+TH	{	
+	vertical-align:	baseline;
+	font-size:	.8em;
+	font-weight:	bold;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	font-family: Arial, Helvetica, sans-serif;
+	}	
+
+table
+{
+	/*border-collapse: collapse;*/
+}
+
+/*
+td
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; 
+}
+*/
+input
+{
+	font-size: 10px;
+	color: black;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+}
+
+.textBox
+{
+	border-right: #000000 1px groove;
+	border-top: #000000 1px groove;
+	border-left: #000000 1px groove;
+	border-bottom: #000000 1px groove;
+	padding: 1px 1px 1px 1px;
+	font-size: 10px;	
+	color: black;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	height: 17px;
+	background-color: floralwhite;
+	text-decoration: none;
+}
+
+.listBox
+{
+	font-size: 10px;
+	border: solid 1px #666666;
+	color: black;
+	padding: 2px 2px 2px 2px; 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+
+}
+
+A:link	{	
+	text-decoration:	none;
+	color:	#3333cc;
+	FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    FONT-SIZE: 10px;
+	}	
+		
+A:visited	{	
+	text-decoration:	none;
+	color:	#333399;
+	FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    FONT-SIZE: 10px;
+	}	
+		
+A:active	{	
+	text-decoration:	none;
+	color:	#333399;
+	FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    FONT-SIZE: 10px;
+	}	
+	
+A:hover	{	
+	text-decoration:	underline;
+	color:	#3333cc;
+	FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    FONT-SIZE: 10px;
+	}
+	
+A.azul-rojo:link {
+	COLOR: #414183; TEXT-DECORATION: none
+}
+A.azul-rojo:visited {
+	COLOR: #414183; TEXT-DECORATION: none
+}
+A.azul-rojo:hover {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+
+SMALL	{	
+	font-size:	9px;
+	}	
+
+BIG	{	
+	font-size:	1.17em;
+	}	
+
+BLOCKQUOTE, PRE	{	
+	font-family:	Courier New, monospace;
+	}	
+	
+
+UL LI	{	
+	list-style-type:	square ;
+	}	
+
+UL LI LI	{	
+	list-style-type:	disc;
+	}	
+
+UL LI LI LI	{	
+	list-style-type:	circle;
+	}	
+	
+OL LI	{	
+	list-style-type:	decimal;
+	}	
+
+OL OL LI	{	
+	list-style-type:	lower-alpha;
+	}	
+
+OL OL OL LI	{	
+	list-style-type:	lower-roman;
+	}	
+.PageTitle
+{
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: bold;
+	font-size: 12px;
+	padding-bottom: 5px;
+	text-transform: uppercase;
+	color: #000000;
+	padding-top: 5px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+}
+.PageFooter
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 11px; 
+}
+
+.TemplateHeader{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #eeeeee; text-decoration: none;font-weight:bold; }
+.tbl-Header
+{
+	font-weight: bold;
+	font-size: 11px;
+	color: Black;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	line-height :20px; 
+	height:20px 
+}
+.tbl-HeaderInactive
+{
+	font-size: 11px;
+	color: #555555;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	line-height :20px; 
+	height:20px 
+}
+/* INFORMATION TABLE STYLES  -START-  usar para despliegue de information*/
+.tbl-HorizHeader{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px; 
+	font-weight: bold;
+	color: #555555;
+	text-decoration: none; 
+	line-height :18px; 
+	height:18px 
+}
+.tbl-HorizItem{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px; 
+	color: Black; 
+	text-decoration: none
+}
+
+/* INFORMATION TABLE STYLES  -END- */
+
+/* DATAGRID STYLES  -START- */
+.tbl-DataGridHeader
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9px; 
+	color: #555555; 
+	background-color: LightSteelBlue;
+	text-decoration: none; 
+	font-weight: bold;
+	height:20px ;
+}
+.tbl-FechaHeader
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px; 
+	color: #000000; 
+	background-color: LightSteelBlue;
+	text-decoration: none; 
+	font-weight: bold;
+	height:20px ;
+}
+.tbl-EncargadoHeader
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px; 
+	color: #000000; 
+	background-color: LightSteelBlue;
+	text-decoration: none; 
+	font-weight: normal;
+	height:20px ;
+}
+.tbl-DataGridItem
+{
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 9px; 
+	color: #000000; 
+	text-decoration: none; 
+	background-color:AliceBlue;
+	border-color:Black; 
+}
+.tbl-DataGridItem-nocliente
+{
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 9px; 
+	color: #F75908; 
+	text-decoration: none; 
+	background-color:AliceBlue;
+	border-color:Black; 
+}
+.tbl-DataGridItemAlternating
+{
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 9px; color: #000000;
+	text-decoration: none; 
+	background-color:#E8F0FF;
+	border-color:Black; 
+}
+.tbl-DataGridItemAlternating-nocliente
+{
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 9px; 
+	color: #F75908;
+	text-decoration: none; 
+	background-color:#E8F0FF;
+	border-color:Black; 
+}
+
+.tbl-DataGridHeaderAlternating
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #555555; 
+	background-color: LightSteelBlue;
+	text-decoration: none; 
+	font-weight: bold;
+	height:20px ;
+}
+
+
+
+
+
+.tbl-DataGridItemAlternating4
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9px; 
+	color: #000000;
+	 text-decoration: none; 
+	 background-color:#FFFFFF;
+	 border-color:Black; 
+	 font-weight: normal;
+}
+.tbl-DataGridItemAlternating3
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9px; 
+	color: #000000; 
+	background-color: #C6E3FF;
+	text-decoration: none; 
+	font-weight: normal;
+}        
+
+.tbl-DataGridItemAlternating_cat
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 11px; 
+	color: #000000; 
+	background-color: #C6E3FF;
+	text-decoration: none; 
+	font-weight: normal;
+}
+
+.verdana-10-normal
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px; 
+	color: #000000; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tbl-DataGridFooter
+{
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 11px; 
+	color: #000000; 
+	font-weight:bold ;
+	text-decoration: none; 
+	background-color:white;
+	border-color:Black; 
+	line-height : 20px;
+	
+}
+
+/* DATAGRID STYLES  -END- */
+/* MESSAGES STYLES  -START- */
+.txt-SoftMessage {
+	FONT-SIZE: 10px; 
+	COLOR: #444444; 
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; 
+	TEXT-DECORATION: none
+}
+.txt-AlertMessage {
+	FONT-SIZE: 10px; 
+	COLOR: Red; 
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; 
+	TEXT-DECORATION: none; 
+	font-weight :bold ;
+}
+.txt-FatalMessage {
+	FONT-SIZE: 12px; 
+	COLOR: Red; 
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; 
+	font-weight :bold ;
+	border-width :medium ;	
+	line-height : 25px;
+}
+.txt-ConfirmMessage
+{
+	font-weight: bold;
+	font-size: 11px;
+	color: #006600;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+}
+/* DATAGRID STYLES  -END- */
+
+/* LOGIN PAGE -START- */
+.login{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 11px; 
+	font-weight: bold;
+	color: #555555;
+	text-decoration: none; 
+	line-height :20px; 
+	height:20px 
+}
+/* LOGIN PAGE -END- */
+.STD-TEXT
+{
+	FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    FONT-SIZE: 11px;
+}
+.STD-TEXTSMALL
+{
+	FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    FONT-SIZE: 10px;
+}
+ A.STD-TEXTSMALL:visited
+{
+	FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    FONT-SIZE: 10px;
+}
+A.STD-TEXTSMALL:link
+{
+	FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    FONT-SIZE: 10px;
+}
+.STD-TEXTSMALLER
+{
+	FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    FONT-SIZE: 9px;
+}
+.usuario
+{
+	color:#5f5f5f;
+	FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    FONT-SIZE: 10px;
+    font-weight : bold 
+}
+.welcome
+{
+	FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    FONT-SIZE: 12px;
+    line-height :20px
+}
+
+.info-informes
+{
+	color:#3C3C3C;
+	FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    FONT-SIZE: 9px;
+    font-weight : normal 
+}
+
+
+.tbl-acp-familias
+{
+	background : #F7FBFF;		
+	border-bottom-color : #000000;
+	border-top-width : 1px;
+	border-top-style : dashed;
+	border-bottom-width : 1px;
+	border-bottom-style : dashed;
+}
+
+.tbl-acp-familias2
+{
+	background : #D8E4EF;		
+	border-bottom-color : #000000;
+	border-top-width : 1px;
+	border-top-style : dashed;
+	border-bottom-width : 1px;
+	border-bottom-style : dashed;
+}
+
+.tbl-acp-subfamilia
+{
+	background : #EFF3F7;		
+	border-bottom-color : #000000;
+	border-top-width : 1px;
+	border-top-style : dashed;
+	border-bottom-width : 1px;
+	border-bottom-style : dashed;
+}
+
+.tbl-acp-subfamilia2
+{
+	background : #F8FBFF;		
+	border-bottom-color : #000000;
+	border-top-width : 1px;
+	border-top-style : dashed;
+	border-bottom-width : 1px;
+	border-bottom-style : dashed;
+}
+
+
+
+
+
+A.acp-familias:link 
+{
+	font-family : Arial;
+	font-size: 11px;
+	color: #414183; 
+	text-decoration: none
+}
+A.acp-familias:visited 
+{
+	font-family : Arial;
+	font-size: 11px;
+	color: #414183; 
+	text-decoration: none
+
+}
+A.acp-familias:hover 
+{
+	font-family : Arial;
+	font-size: 11px;
+	color: #0000FF; 
+	text-decoration: underline;
+
+}
+
+
+
+A.acp-familias-bold:link 
+{
+	font-family : Verdana, Arial;
+	font-size: 11px;
+	color: #414183; 
+	text-decoration: none;
+	font-weight : bold;
+}
+
+A.acp-familias-bold:visited 
+{
+	font-family : Verdana, Arial;
+	font-size: 11px;
+	color: #414183; 
+	text-decoration: none;
+	font-weight : bold;
+}
+A.acp-familias-bold:hover 
+{
+	font-family : Verdana, Arial;
+	font-size: 11px;
+	color: #0000FF; 
+	text-decoration: underline;
+	font-weight : bold;
+}
+
+
+
+A.acp-subfamilia:link 
+{
+	font-family : Arial;
+	font-size: 10px;
+	color: #414183; 
+	text-decoration: none
+}
+A.acp-subfamilia:visited 
+{
+	font-family : Arial;
+	font-size: 10px;
+	color: #414183; 
+	text-decoration: none
+
+}
+A.acp-subfamilia:hover 
+{
+	font-family : Arial;
+	font-size: 10px;
+	color: #0000FF; 
+	text-decoration: underline;
+
+}
+
+
+A.acp-subfamilia-bold:link 
+{
+	font-family : Arial;
+	font-size: 10px;
+	color: #414183; 
+	text-decoration: none;
+	font-weight: bold;	
+}
+A.acp-subfamilia-bold:visited 
+{
+	font-family : Arial;
+	font-size: 10px;
+	color: #414183; 
+	text-decoration: none;
+	font-weight: bold;
+}
+A.acp-subfamilia-bold:hover 
+{
+	font-family : Arial;
+	font-size: 10px;
+	color: #0000FF; 
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+div.texto-normal
+{
+	font-size: 12px;
+	font-family: "Arial";
+}
+
+span.mensajeAccion
+{
+	background-color: Yellow;
+	border: dotted 1px #000000;
+	padding: 5px 15px 5px 15px;
+}
+
+/* Catastro de máquinas */
+TD.nombre-campo
+{
+	font-size: 12px;
+	font-weight: bold;
+	padding: 5px;
+	text-align: left;
+}
+
+div.maquinas-titulo1
+{
+	font-size: 15px;
+	font-weight: bold;
+	padding: 5px;
+}
+
+div.maquinas-titulo2
+{
+	font-size: 13px;
+	font-weight: bold;
+	padding: 5px;
+	color: #666666;
+}
+
+div.maquinas-conteo-registros
+{
+	font-size: 10px;
+	font-weight: normal;
+	padding: 15px;
+	color: #666666;
+}
+
+.maquinas-cabecera-datagrid
+{
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 12px; color: #FFFFFF;
+	text-decoration: none; 
+	background-color: Blue;
+}
+
+.maquinas-dato-datagrid
+{
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 12px; color: #000000;
+	text-decoration: none; 
+	background-color:#E8F0FF;
+}
+
+.maquinas-dato-datagrid-alternado
+{
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 12px; color: #000000;
+	text-decoration: none; 
+	background-color:#FFFFFF;
+}
+.maquinas-celda-limite-datagrid
+{
+	border-top: solid 1px #000000; 
+}
+
+A.maquinas-vinculo-t1
+{
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #0000FF;
+	text-decoration: underline;
+}
+
+A:hover.maquinas-vinculo-t1
+{
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #0000CC;
+	text-decoration: underline;	
+}
+
+A:visited.maquinas-vinculo-t1
+{
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #0000CC;
+	text-decoration: underline;	
+}
+
+
+
+
+/* INI : Definiciones para paginas de potencial cliente */
+
+TD.pot-celda-titulo
+{
+	padding: 3px 10px 3px 3px;
+	font-family: Verdana;
+	font-weight: normal;
+	color: #333333;
+	font-size: 13px;
+	vertical-align: top;
+}
+
+TD.pot-celda-titulo-2
+{
+	padding: 3px 10px 3px 3px;
+	font-family: Verdana;
+	font-weight: bold;
+	color: #333333;
+	font-size: 10px;
+	vertical-align: top;
+}
+
+TD.pot-celda-valor
+{
+	padding: 3px 10px 3px 3px;
+	font-family: Verdana;
+	font-weight: normal;
+	color: #000000;
+	font-size: 13px;
+	vertical-align: top;
+}
+
+TR.pot-ft1
+{
+	background-color: #EFEFEF;
+}
+
+TR.pot-ft2
+{
+	background-color: #FFFFFF;
+}
+
+.pot-textbox-cifra
+{
+	font-size: 12px;
+	text-align: right;
+}
+
+.pot-textbox-texto
+{
+	font-size: 12px;
+	text-align: left;
+}
+
+DIV.pot-resultado-cliente
+{
+	padding: 5px 40px 5px 40px;
+}
+
+div.pot-contenedor-controles
+{
+	padding: 5px 20px 00px 20px;
+	width:98%;
+}
+
+legend.pot-groupbox-potencial
+{
+	font-size: 14px;
+	font-weight: bold;
+	color: Navy;
+}
+
+TD.pot-promedio-ventas
+{
+	padding: 3px;
+	background-color: #206FB2;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+}
+
+TD.pot-promedio-ventas-n2
+{
+	padding: 3px;
+	background-color: #2C8AD9;
+	color: #FFFFFF;
+	font-size: 11px;
+	font-weight: normal;
+	text-align: right;
+}
+
+TD.pot-celda-dato-t2
+{
+	background-color: #D1E5F7;
+	font-size: 12px;
+}
+
+TD.pot-celda-dato-t1
+{
+	background-color: #FFFFFF;
+	font-size: 12px;
+}
+
+A:link.pot-vinculo
+{
+	font-size: 12px;
+	font-weight: bold;
+}
+
+A:hover.pot-vinculo, A:visited.pot-vinculo
+{
+	font-size: 12px;
+	font-weight: bold;
+}
+
+
+/*
+#modalPage
+{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px; left: 0px;
+}
+*/
+#modalPopup
+{
+
+	border:3px solid black; 
+	background-color:#FFFFFF; 
+	padding:0px; 
+	/*font-size:150%; */
+	text-align:center; 
+	display:none;
+    z-index: 9999;	
+}
+.modalContainer
+{
+    position: absolute;
+    /*width: 500px;*/
+    /*left: 50%;*/
+    /*top: 50%;*/
+    z-index: 10000;
+}
+.modal
+{
+    background-color: white;
+    border: solid 4px black; 
+    position: relative;
+    top: -220px;
+    left: -400px;
+    z-index: 10001;
+    width: 780px;
+    height: 440px;
+    padding: 0px;
+}
+.modalTop
+{
+    width: 770px;
+    background-color: #000099;
+    padding: 4px;
+    color: #ffffff;
+    text-align: right;
+    font-size:12px;
+}
+.modalTop a, .modalTop a:visited
+{
+    color: #ffffff;
+}
+.modalBody
+{
+    padding: 0px;
+    width: 780px;    
+}
+
+#mensaje_popup
+{
+	font-size:12px;
+}
+
+div.mensaje-exito
+{
+	background-image: url(/images/iconSuccess_16x16.gif);
+	background-repeat: no-repeat;
+	text-align: left;
+	padding: 5px 5px 5px 20px;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+div.mensaje-fallo
+{
+	background-image: url(/images/error-icon.jpg);
+	background-repeat: no-repeat;
+	text-align: left;
+	padding: 5px 5px 5px 20px;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+.boton-accion
+{
+	font-size: 12px;
+	width: 130px;
+	padding: 5px;
+}
+
+/***************************************************************/
+ul.tabs 
+{   
+    margin: 0;   
+    padding: 0;   
+    float: left;   
+    list-style: none;   
+    height: 32px;   
+    border-bottom: 1px solid #D3E8F8;   
+    border-left: 1px solid #FFFFFF;      
+}   
+ul.tabs li 
+{   
+    float: left;   
+    margin: 0;   
+    padding: 0;   
+    height: 31px;   
+    line-height: 31px;   
+    border: 1px solid #FFFFFF;   
+    border-left: none;   
+    margin-bottom: 0px;   
+    overflow: hidden;   
+    position: relative;   
+    background: #EAEAEA;    
+    font-size: 12px;          
+}   
+ul.tabs li a:link 
+{   
+    text-decoration: none;   
+    display: block;   
+    font-size: 12px;   
+    padding: 0 20px;   
+    border: 1px solid #FFFFFF;   
+    outline: none;   
+    font-weight: bolder;
+	color: #999999;    
+}
+  
+ul.tabs li a:hover 
+{   
+    background: #ccc;  
+    font-size: 12px;  
+} 
+
+ul.tabs li a:visited 
+{   
+    background: #ccc;  
+    font-size: 12px;  
+    color: #0000FF;     
+} 
+  
+ul.tabs li.active, ul.tabs li.active a:hover, ul.tabs li.active a:link   
+{   
+    background-color: #D3E8F8;   
+    border-bottom: 1px solid #A7D0F1;   
+    font-size: 12px;     
+    color: #000000; 
+} 
+
+.tab_container {   
+    border: 1px solid #A7D0F1;   
+    border-top: none;   
+    overflow: hidden;   
+    clear: both;   
+    float: left; width: 100%;   
+    background: #D3E8F8;   
+}   
+.tab_content {   
+    padding: 20px;   
+    font-size: 12px;   
+}   
+/***************************************************************/
+
+   
+TR.pot-cabecera
+{
+	background-color: #A5ABF7;
+	font-size: 10px;
+	color: #FFFFFF;
+	font-weight: bold;
+	height: 30px;
+}
+
+TR.pot-item-alternado
+{
+	background-color: #C4DEF4;	
+	font-size: 10px;
+}
+
+TR.pot-item-normal
+{
+	background-color: #EFF6FC;	
+	font-size: 10px;
+}
+
+TABLE.pot-resultados
+{
+	text-align: left;
+}
+
+TR.pot-seleccion-fila
+{
+	background-color: Yellow;
+	font-size: 10px;
+}
+
+INPUT.pot-cifra
+{
+	text-align: right;
+	width: 80px;
+	font-size: 10px;
+	border: solid 1px #D0D0D0;
+}
+
+
+.statusbar
+{    
+	font-size: 14px;  	
+	position: fixed;    
+	bottom: 5px;    
+	left: 0px;    
+	right: 0px;    
+	height: 16px;        
+	padding: 5px;     
+	background: black;    
+	color: white;        
+	border: solid 1px lightgray;     
+	opacity: .70;        
+	filter: alpha(opacity="70");    
+	z-index: 10000;     
+	overflow: hidden;    
+	overflow-y: auto; 
+}
+
+.statusbar-error
+{    
+	font-size: 14px;  	
+	position: fixed;    
+	bottom: 5px;    
+	left: 0px;    
+	right: 0px;    
+	height: 16px;        
+	padding: 5px;     
+	background: black;    
+	color: white;        
+	border: solid 1px lightgray;     
+	opacity: .70;        
+	filter: alpha(opacity="70");    
+	z-index: 10000;     
+	overflow: hidden;    
+	overflow-y: auto; 
+}
+
+.statusbar-exito
+{    
+	position: fixed;    
+	bottom: 5px;    
+	left: 0px;    
+	right: 0px;    
+	height: 16px;        
+	padding: 5px;     
+	background: black;    
+	color: white;        
+	border: solid 1px lightgray;     
+	opacity: .70;        
+	filter: alpha(opacity="70");    
+	z-index: 10000;     
+	overflow: hidden;    
+	overflow-y: auto; 
+}
+
+
+
+.statusbarhighlight
+{
+	font-weight: bold;    
+	background-color: khaki;    
+	color: Maroon;  
+	font-size: 14px;  	  
+	border: solid 1px silver;
+	z-index: 10001;    	
+}
+
+.statusbarhighlight-error
+{
+	font-weight: bold;    
+	background-color: khaki;    
+	color: #FF0000;
+	font-size: 14px;    
+	border: solid 1px silver;
+	z-index: 10001;    	
+}
+
+.statusbarhighlight-exito
+{
+	font-weight: bold;    
+	background-color: khaki;    
+	color: #0000FF;
+	font-size: 14px; 
+	border: solid 1px silver;
+	z-index: 10001;    	
+}
+
+
+/* FIN : Definiciones para paginas de potencial cliente */
+
+
+/**/
+
+TD.cma-cabecera-titulo
+{
+	background-color: #1D6DB1;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 5px;
+}
+
+TR.cma-cabecera-resultado
+{
+	background-color: #1D6DB1;
+	color: #FFFFFF;
+}
+
+TD.cma-cabecera-opciones
+{
+	background-color: #2688DB;
+	text-align: left;
+	color:#ffffff;
+	padding: 5px;
+}
+
+TD.cma-cabecera-c1
+{
+	padding: 5px;
+	font-weight: bold;
+	text-align: left;
+	width: 80px;
+}
+
+TD.cma-cabecera-c2
+{
+	padding: 5px;
+	font-weight: bold;
+	text-align: left;
+	width: 240px;
+}
+
+TD.cma-cabecera-c3
+{
+	padding: 5px;
+	font-weight: bold;
+	text-align: left;
+	width: 500px;
+}
+
+TR.cma-cabecera-equipos
+{
+	background-color: #8EB6D8;
+	color: #FFFFFF;
+}
+
+TD.cma-nombre-campo-chico
+{
+	font-size:10px;
+	padding: 3px;
+	vertical-align: top;
+}
+
+TD.cma-cabecera-equipos-c0
+{
+	padding: 3px;
+	width: 237px;	
+	font-weight: bold;
+	text-align: left;	
+}
+
+TD.cma-cabecera-equipos-c1
+{
+	padding: 3px;
+	width: 150px;	
+	font-weight: bold;
+	text-align: left;		
+}
+
+TR.cma-dato-equipos
+{
+	background-color:#FFFEEE;
+}
+
+TD.cma-dato-equipos-c0
+{
+	padding: 3px;
+	border-bottom: solid 1px #CACACA;
+	vertical-align: top;
+	font-weight: bold;
+	color: #155285;
+	text-align: left;
+}
+
+
+TD.cma-dato-equipos-c1
+{
+	padding: 3px;	
+	border-bottom: solid 1px #CACACA;	
+	vertical-align: top;
+	text-align: left;	
+}
+
+TD.cma-dato-equipos-c2
+{
+	padding: 3px 5px 3px 5px;
+	border-bottom: solid 1px #CACACA;
+	vertical-align: top;
+}
+
+
+TD.cma-dato-equipos-c3
+{
+	padding: 3px 5px 3px 5px;
+	border-bottom: solid 1px #CACACA;	
+	vertical-align: top;	
+}
+
+TD.cma-cabecera-equipos-c2
+{
+	padding: 2px;
+}
+
+
+INPUT.cma-cifra
+{
+	text-align: right;
+	font-size: 12px;
+	border: solid 1px #999999;
+}
+
+INPUT.cma-texto
+{
+	text-align: left;
+	font-size: 12px;
+	border: solid 1px #999999;
+}
+
+select.cma-medida
+{
+	font-size: 12px;
+	border: solid 1px #D0D0D0;
+	height:40px;
+	width: 182px;
+}
+
+.manito
+{
+	cursor:pointer;
+}
+
+TR.cma-item-normal
+{
+}
+
+TR.cma-item-alternado
+{
+}
+
+	
+/**/
+
+A:link.cma-nombre-artefacto-sel, A:visited.cma-nombre-artefacto-sel
+{
+	color: #333333;
+	background-image: url(/images/treeplus.png);
+	background-repeat: no-repeat;
+	padding-left: 15px;
+	background-position: 0px -3px;
+}
+
+A:hover.cma-nombre-artefacto-sel
+{
+	color: #333333;
+	background-image: url(/images/treeplus.png);
+	background-repeat: no-repeat;
+	padding-left: 15px;
+	background-position: 0px -3px;	
+}
+
+A:link.cma-nombre-artefacto, A:visited.cma-nombre-artefacto
+{
+	color: #333333;
+	background-image: url(/images/treeminus.png);
+	background-repeat: no-repeat;
+	padding-left: 15px;
+	background-position: 0px -3px;
+}
+
+A:hover.cma-nombre-artefacto
+{
+	color: #333333;
+	background-image: url(/images/treeminus.png);
+	background-repeat: no-repeat;
+	padding-left: 15px;
+	background-position: 0px -3px;	
+}
+
+
+
+
+
+
+TR.cma-fila-alterna
+{
+	background-color: #F7F7F7;
+}
+
+TR.cma-fila-normal
+{
+	background-color: #FFFFFF;
+}
+
+TR.cma-fila-seleccionada
+{
+	background-color: #FFDFBB;
+}
+
+TD.cma-dato-c1
+{
+	text-align: left;
+	vertical-align: top;
+	padding: 3px 3px 5px 3px;
+}
+
+TD.cma-dato-c2
+{
+	text-align: left;
+	vertical-align: top;
+	padding: 3px 3px 5px 3px;
+}
+
+TD.cma-dato-c3
+{
+	text-align: right;
+	padding-bottom: 5px;
+}
+.cma-op-texto1
+{
+	font-size:10px;
+}
+
+legend.cma-titulo1
+{
+	font-size:12px;
+	font-weight: bold;
+}
+
+div.cma-texto-chico
+{
+	font-size: 10px;
+	color: #FF0000;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: justify;
+}
+
+#opcionesDespliegue
+{
+	cursor: pointer;
+}
+
+.cma-boton-accion-principal
+{
+	font-size: 13px;
+	padding: 5px;
+}
+
+.cma-boton-accion-secundaria
+{
+	font-size: 9px;
+}
+
+A:link.cma-agrega-nuevo-equipo, A:visited.cma-agrega-nuevo-equipo
+{
+	font-size: 10px;
+	color: #000084;
+	text-decoration: none;
+	padding: 0px 10px 10px 0px;
+}
+
+A:hover.cma-agrega-nuevo-equipo
+{
+	text-decoration: none;
+	color: #0505FF;
+	padding: 0px 10px 10px 0px;
+}
+
+
+A:link.cma-edita-equipo, A:visited.cma-edita-equipo
+{
+	font-size: 10px;
+	color: #000084;
+	text-decoration: none;
+}
+
+A:hover.cma-edita-equipo
+{
+	text-decoration: none;
+	color: #0505FF;
+
+}
+
+div.cma-detalle-maquina
+{
+	font-size: 9px;
+	color: #666666;
+	padding: 3px 3px 3px 15px;
+	margin: 2px 0px 10px 0px;
+	background-color: #FFFBBB;
+	border: solid 1px #FFF555;
+	display: none;
+	font-weight: normal;
+}
+
+TD.cma-pie-resultado
+{
+	background-color: #1D6DB1;
+	color:#FFFFFF;
+	padding: 5px;
+	text-decoration: none;
+}
+
+A:link.cm-pagina-resultado, A:visited.cm-pagina-resultado
+{
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+A:hover.cm-pagina-resultado
+{
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration:underline;	
+}
+
+span.cm-pagina-resultado
+{
+	font-size: 16px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration:none;
+}
+.cma-ddl-t1
+{
+	width: 200px;
+	font-size: 10px;
+}
+
+TD.cma-mensaje-valor-multiple
+{
+	text-align: center;
+	font-size:10px;
+	color:#333333;
+}
+
+TD.cma-nuevo-valor
+{
+	background-color: #DCF593;
+	font-size :10px;
+	padding:3px 0px 3px 3px
+}
+
+/**/
+
+tr.listado-header
+{
+	background-color: #1D6DB1;
+	color:#FFFFFF;
+	font-size: 12px;
+}
+
+tr.listado-normal
+{
+	background-color: #FFFFFF;
+	color:#333333;
+	font-size: 12px;	
+}
+
+tr.listado-alterno
+{
+	background-color: #DDE9F3;
+	color:#333333;
+	font-size: 12px;	
+}
+
+A:link.listado-vinculo, A:visited.listado-vinculo
+{
+	font-size: 12px;	
+}
+
+A:hover.listado-vinculo
+{
+	font-size: 12px;	
+}
+
+.boton-buscar
+{
+	font-size: 12px;	
+}
+
+TD.frm-nombre-campo
+{
+	font-size: 12px;	
+}
+
+INPUT.frm-caja-texto
+{
+	font-size: 12px;	
+}
+
+/* Cumplimiento metas */
+
+TR.met-cabecera-resultado
+{
+	background-color: #004280;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+TR.met-fila-alterna
+{
+	background-color: #EFEFEF;
+	font-size: 12px;	
+}
+
+TR.met-fila-seleccionada
+{
+	background-color: #F2FCAF;
+	font-size: 12px;	
+	cursor: pointer;
+}
+
+TD.met-cabecera-titulo
+{
+	background-color: Navy;
+	font-size: 12px;
+	color: #FFFFFF;
+	padding: 5px;
+	font-weight: bold;
+}
+
+TR.met-fila-normal
+{
+	background-color: #FFFFFF;
+	padding: 3px;	
+	font-size: 12px;	
+}
+
+TR.met-fila-totales
+{
+	background-color: #FBFFCC;
+	padding: 3px;
+	font-weight: bold;
+}
+
+TD.met-pie-resultado
+{
+		background-color: #004280;
+		height: 14px;
+		color: #FFFFFF;
+		font-weight: bold;
+		text-align: left;
+		padding: 3px;
+}
+
+TD.met-cabecera-c0
+{
+	width: 50px;
+	text-align: left;
+	padding: 3px;		
+}
+
+TD.met-cabecera-c1
+{
+	width: 100px;
+	text-align: left;
+	padding: 3px;	
+}
+
+TD.met-cabecera-c2
+{
+	width: 200px;
+	text-align: left;	
+	padding: 3px;	
+}
+
+TD.met-cabecera-c3
+{
+	width: 100px;
+	text-align: left;
+	padding: 3px;				
+}
+
+TD.met-cabecera-c4
+{
+	width: 150px;
+	text-align: left;		
+	padding: 3px;		
+}
+
+TD.met-cabecera-c5
+{
+	width: 100px;
+	text-align: right;	
+	padding: 3px;			
+}
+
+TD.met-cabecera-c6
+{
+	width: 100px;
+	text-align: right;	
+	padding: 3px;			
+}
+
+
+TD.met-cabecera-c7
+{
+	width: 100px;
+	text-align: right;
+	padding: 3px;				
+}
+
+TD.met-dato-c0
+{
+	text-align: left;
+	font-size: 12px;
+	padding: 3px;		
+}
+
+TD.met-dato-c1
+{
+	text-align: left;
+	font-size: 12px;
+	padding: 3px;		
+}
+
+TD.met-dato-c2
+{
+	text-align: left;
+	font-size: 12px;
+	padding: 3px;		
+}
+
+TD.met-dato-c3
+{
+	text-align: left;
+	font-size: 12px;
+	padding: 3px;		
+}
+
+TD.met-dato-c4
+{
+	text-align: left;
+	font-size: 12px;
+	padding: 3px;		
+}
+
+TD.met-dato-c5
+{
+	text-align: right;
+	font-size: 12px;
+	padding: 3px;		
+}
+
+TD.met-dato-c6
+{
+	text-align: right;
+	font-size: 12px;
+	padding: 3px;		
+}
+
+TD.met-dato-c7
+{
+	text-align: right;
+	font-size: 12px;
+	padding: 3px;		
+}
+
+TD.titulo-tabla
+{
+	background-color: #1F7BC8;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-align: center;
+	padding: 5px;
+}
+
+TD.contenedor-controles-consulta
+{
+	background-color: #4FA2E2;
+	border: solid 1px #3996DE;
+	padding: 5px;
+}
+
+TD.nombre-campo-v2
+{
+	padding: 3px;
+	color: #FFFFFF;
+	font-size: 12px;
+}
+
+.cbl-sucursales
+{
+	font-size: 10px;
+	color: #FFFFFF;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*
+estilo para Analisis de Compras y Stock */
+
+table.acs-reporte
+{ 
+	background-color: #CCCCCC;
+	border: solid 1px #cccccc;
+
+}
+
+tr.acs-cabecera
+{
+	background-color : #1D6DB1;
+	color : #FFFFFF;
+	}
+	
+tr.acs-subcabecera
+{
+	background-color : #3C93DF;
+	color : #FFFFFF;
+}
+td.acs-subcabecera2
+{   background-color : #3C93DF;
+	color : #FFFFFF;
+}
+
+
+td.acs-t1
+{
+	background-color:#FFFFFF;
+	font-size : 11px;
+	text-align: center;
+}
+
+td.acs-t2
+{
+	background-color:#FFFFFF;
+	font-size : 11px;
+	text-align: left;
+}
+
+td.acs-t3
+{
+	background-color:#FFFFFF;
+	font-size : 11px;
+	text-align: right;
+	padding:3px;
+
+}
+td.acs-t4
+{
+	background-color:#FFFFFF;
+	font-size : 8px;
+	text-align: left;
+}
+
+td.acs-t5
+{
+	background-color:#FFFFFF;
+	font-size : 8px;
+	text-align: right;
+}
+
+td.acs-t6
+{
+	
+	background-color: #D2E1EE;
+	font-size : 8px;
+	text-align: right;
+}
+
+A:link.hl-acs-cabecera, A:visited.hl-acs-cabecera
+{
+	font-size :10px;
+	color:#FFFFFF;
+}
+
+
+
+td.acs-cabecera-codigo
+{
+	font-weight: bold;
+}
+
+td.acs-cabecera-descripcion
+{
+	text-align: left;
+	font-weight: bold;	
+}
+td.acs-cabecera-umb
+{
+	text-align: center;
+	font-weight: bold;	
+}
+
+td.acs-cabecera-dii
+{
+	text-align: right;
+	width: 55px;
+	font-weight: bold;	
+	background-color: #2688DB;
+}
+
+td.acs-cabecera-stock
+{
+	text-align: right;
+	width: 55px;
+	font-weight: bold;
+}
+
+td.acs-cabecera-total
+{
+	text-align: right;
+	width: 55px;
+}
+
+td.acs-cabecera-oc
+{
+	text-align: right;
+	width: 55px;
+}
+td.acs-cabecera-prof
+{
+	text-align: right;
+	width: 55px;
+}
+td.acs-cabecera-fact
+{
+	text-align: right;
+	width: 55px;
+}
+td.acs-cabecera-cant-prox-recep
+{
+	text-align: right;
+	width: 55px;
+}
+td.acs-cabecera-en-proc-recep
+{
+	text-align: right;
+	width: 55px;
+}
+
+td.acs-cabecera-p3m
+{
+	text-align: right;
+	width: 55px;
+	background-color: #2687DB;
+}
+td.acs-cabecera-p6m
+{
+	text-align: right;
+	width: 55px;
+	background-color: #2687DB;	
+}
+td.acs-cabecera-p12m
+{
+	text-align: right;
+	width: 55px;
+	background-color: #2687DB;	
+}
+td.acs-cabecera-concepto
+{
+	text-align: center;
+	font-weight: bold;	
+}
+
+
+td.acs-cabecera-pedidos
+{
+	font-weight: bold;	
+	background-color: #1D6DB1;	
+}
+td.acs-cabecera-promedios
+{
+	font-weight: bold;	
+
+}
+td.acs-cabecera-concepto
+{
+	font-weight: bold;	
+}
+
+
+#TituloVentanaEmergente-acs
+{
+	padding: 5px;
+}
+
+#TituloVentanaEmergente-acs div
+{
+	font-size: 14px;
+	font-weight:bold;
+}
+a.cerrar-popUp:hover, a.cerrar-popUp:link,a.cerrar-popUp:visited
+{ color:White;
+	}
+	
+td.nombre-celda-resecat
+{
+	font-size: 12px;
+}

@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/wsAndes/OrgSrv" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/wsAndes/OrgSrv" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/wsAndes/OrgSrv">
+      <s:element name="obtieneSucursales">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoFilial" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneSucursalesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneSucursalesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaSociedades">
+        <s:complexType />
+      </s:element>
+      <s:element name="listaSociedadesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaSociedadesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaPromotoras">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaPromotorasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaPromotorasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaVendedoras">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaVendedorasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaVendedorasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaVendedorasVirtuales">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaVendedorasVirtualesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaVendedorasVirtualesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaAgentesPorTipo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoTipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaAgentesPorTipoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaAgentesPorTipoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaClientesPorAgente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoTipoAgente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoAgente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaClientesPorAgenteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaClientesPorAgenteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneIntegrantesCelula">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCelula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneIntegrantesCelulaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneIntegrantesCelulaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneEstructuraComercialUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoSociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneEstructuraComercialUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneEstructuraComercialUsuarioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="obtieneSucursalesSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneSucursales" />
+  </wsdl:message>
+  <wsdl:message name="obtieneSucursalesSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneSucursalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="listaSociedadesSoapIn">
+    <wsdl:part name="parameters" element="tns:listaSociedades" />
+  </wsdl:message>
+  <wsdl:message name="listaSociedadesSoapOut">
+    <wsdl:part name="parameters" element="tns:listaSociedadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="listaPromotorasSoapIn">
+    <wsdl:part name="parameters" element="tns:listaPromotoras" />
+  </wsdl:message>
+  <wsdl:message name="listaPromotorasSoapOut">
+    <wsdl:part name="parameters" element="tns:listaPromotorasResponse" />
+  </wsdl:message>
+  <wsdl:message name="listaVendedorasSoapIn">
+    <wsdl:part name="parameters" element="tns:listaVendedoras" />
+  </wsdl:message>
+  <wsdl:message name="listaVendedorasSoapOut">
+    <wsdl:part name="parameters" element="tns:listaVendedorasResponse" />
+  </wsdl:message>
+  <wsdl:message name="listaVendedorasVirtualesSoapIn">
+    <wsdl:part name="parameters" element="tns:listaVendedorasVirtuales" />
+  </wsdl:message>
+  <wsdl:message name="listaVendedorasVirtualesSoapOut">
+    <wsdl:part name="parameters" element="tns:listaVendedorasVirtualesResponse" />
+  </wsdl:message>
+  <wsdl:message name="listaAgentesPorTipoSoapIn">
+    <wsdl:part name="parameters" element="tns:listaAgentesPorTipo" />
+  </wsdl:message>
+  <wsdl:message name="listaAgentesPorTipoSoapOut">
+    <wsdl:part name="parameters" element="tns:listaAgentesPorTipoResponse" />
+  </wsdl:message>
+  <wsdl:message name="listaClientesPorAgenteSoapIn">
+    <wsdl:part name="parameters" element="tns:listaClientesPorAgente" />
+  </wsdl:message>
+  <wsdl:message name="listaClientesPorAgenteSoapOut">
+    <wsdl:part name="parameters" element="tns:listaClientesPorAgenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneIntegrantesCelulaSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneIntegrantesCelula" />
+  </wsdl:message>
+  <wsdl:message name="obtieneIntegrantesCelulaSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneIntegrantesCelulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneEstructuraComercialUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneEstructuraComercialUsuario" />
+  </wsdl:message>
+  <wsdl:message name="obtieneEstructuraComercialUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneEstructuraComercialUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OrgSrvSoap">
+    <wsdl:operation name="obtieneSucursales">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna todas las sucursales para una filial que están registradas dentro de Andes.</wsdl:documentation>
+      <wsdl:input message="tns:obtieneSucursalesSoapIn" />
+      <wsdl:output message="tns:obtieneSucursalesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listaSociedades">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lista dominio de sociedades vigentes.</wsdl:documentation>
+      <wsdl:input message="tns:listaSociedadesSoapIn" />
+      <wsdl:output message="tns:listaSociedadesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listaPromotoras">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lista dominio de promotoras para una sociedad.</wsdl:documentation>
+      <wsdl:input message="tns:listaPromotorasSoapIn" />
+      <wsdl:output message="tns:listaPromotorasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listaVendedoras">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lista dominio de vendedoras para una sociedad.</wsdl:documentation>
+      <wsdl:input message="tns:listaVendedorasSoapIn" />
+      <wsdl:output message="tns:listaVendedorasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listaVendedorasVirtuales">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lista dominio de vendedoras virtuales para una sociedad.</wsdl:documentation>
+      <wsdl:input message="tns:listaVendedorasVirtualesSoapIn" />
+      <wsdl:output message="tns:listaVendedorasVirtualesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listaAgentesPorTipo">
+      <wsdl:input message="tns:listaAgentesPorTipoSoapIn" />
+      <wsdl:output message="tns:listaAgentesPorTipoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listaClientesPorAgente">
+      <wsdl:input message="tns:listaClientesPorAgenteSoapIn" />
+      <wsdl:output message="tns:listaClientesPorAgenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneIntegrantesCelula">
+      <wsdl:input message="tns:obtieneIntegrantesCelulaSoapIn" />
+      <wsdl:output message="tns:obtieneIntegrantesCelulaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneEstructuraComercialUsuario">
+      <wsdl:input message="tns:obtieneEstructuraComercialUsuarioSoapIn" />
+      <wsdl:output message="tns:obtieneEstructuraComercialUsuarioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OrgSrvSoap" type="tns:OrgSrvSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="obtieneSucursales">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/OrgSrv/obtieneSucursales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaSociedades">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/OrgSrv/listaSociedades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaPromotoras">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/OrgSrv/listaPromotoras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaVendedoras">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/OrgSrv/listaVendedoras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaVendedorasVirtuales">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/OrgSrv/listaVendedorasVirtuales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaAgentesPorTipo">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/OrgSrv/listaAgentesPorTipo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaClientesPorAgente">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/OrgSrv/listaClientesPorAgente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneIntegrantesCelula">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/OrgSrv/obtieneIntegrantesCelula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneEstructuraComercialUsuario">
+      <soap:operation soapAction="http://tempuri.org/wsAndes/OrgSrv/obtieneEstructuraComercialUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OrgSrvSoap12" type="tns:OrgSrvSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+    <wsdl:operation name="obtieneSucursales">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/OrgSrv/obtieneSucursales" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaSociedades">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/OrgSrv/listaSociedades" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaPromotoras">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/OrgSrv/listaPromotoras" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaVendedoras">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/OrgSrv/listaVendedoras" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaVendedorasVirtuales">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/OrgSrv/listaVendedorasVirtuales" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaAgentesPorTipo">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/OrgSrv/listaAgentesPorTipo" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaClientesPorAgente">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/OrgSrv/listaClientesPorAgente" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneIntegrantesCelula">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/OrgSrv/obtieneIntegrantesCelula" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneEstructuraComercialUsuario">
+      <soap12:operation soapAction="http://tempuri.org/wsAndes/OrgSrv/obtieneEstructuraComercialUsuario" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OrgSrv">
+    <wsdl:port name="OrgSrvSoap" binding="tns:OrgSrvSoap">
+      <soap:address location="http://ws.andes.gms.cl/OrgSrv.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OrgSrvSoap12" binding="tns:OrgSrvSoap12">
+      <soap12:address location="http://ws.andes.gms.cl/OrgSrv.asmx" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
